@@ -74,7 +74,7 @@ const stepsContent = [
 const SpecialOffer = () => {
   return (
     <section
-      className="bg-[#f6f4f2] py-12 px-6 text-center"
+      className="bg-[#f6f4f2] py-12 my-20 px-6 text-center"
       id="black-friday-offer"
     >
       <h2 className="text-4xl font-bold text-[#550640] font-serif">
@@ -127,10 +127,10 @@ const EasySteps = () => {
 
 const Sections = () => {
   return (
-    <>
+    <div>
       <SpecialOffer />
       <EasySteps />
-    </>
+    </div>
   );
 };
 

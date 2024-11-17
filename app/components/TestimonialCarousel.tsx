@@ -92,7 +92,7 @@ const TestimonialsCarousel = () => {
       </h2>
 
       {/* Carousel */}
-      <div ref={sliderRef} className="keen-slider">
+      <div ref={sliderRef} className="keen-slider py-10">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
@@ -134,7 +134,7 @@ const TestimonialsCarousel = () => {
       </button>
 
       {/* Pagination */}
-      <div className="flex justify-center h-auto min-h-2/3 gap-2">
+      <div className="flex justify-center h-full min-h-2/3 gap-2">
         {Array.from({ length: testimonials.length }, (_, index) => (
           <button
             key={index}

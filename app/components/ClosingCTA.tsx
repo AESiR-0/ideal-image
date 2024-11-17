@@ -1,3 +1,4 @@
+import Link from "next/link";
 const ClosingCTA = () => {
   return (
     <div className="bg-[#550640] py-16 font-serif text-center">
@@ -13,7 +14,7 @@ const ClosingCTA = () => {
 
       {/* CTA Button */}
       <button className="bg-[#deacac] text-white px-8 py-3 text-lg font-bold rounded-md hover:bg-[#550640a7] transition-all duration-300">
-        Claim up to 85% Off*
+        <Link href={"#"}> Claim up to 85% Off*</Link>
       </button>
     </div>
   );

@@ -57,7 +57,7 @@ const AccordionSet = ({ title, content }: AccordionItemProps) => {
 
 const AccordionMain: React.FC = () => {
   return (
-    <section className="container h-screen py-20 max-md:flex-col items-center flex gap-10 justify-center">
+    <section className="container h-full min-h-screen py-20 max-md:flex-col items-center flex gap-10 justify-center">
       <div className="w-[55%]  flex flex-col justify-center items-start ">
         <h2 className="text-6xl font-serif mb-4 ">FAQs</h2>
         <p className="w-full mb-4">Common Questions, Answered</p>
@@ -73,7 +73,7 @@ const AccordionMain: React.FC = () => {
           })}
         </div>
       </div>
-      <div className="w-1/3 max-md:hidden h-full border border-red-200">
+      <div className="w-1/3 max-md:hidden h-full ">
         <Image alt="Image " src={FAQImage} objectFit="cover" />
       </div>
     </section>

@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Sections from "./components/Sections";
 import ClosingCTA from "./components/ClosingCTA";
 import FAQs from "./components/FAQs";
+import BeforeAfterSlider from "./components/BeforeAfterSlider";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroSection />
       <Features />
       <WhyChooseUs />
+      <BeforeAfterSlider />
       <Sections />
       <TestimonialsCarousel />
       <ClosingCTA />
