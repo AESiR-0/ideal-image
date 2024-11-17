@@ -6,8 +6,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
-
-// Image imports
 import beforeImage_1 from "@/public/static/slider/1_before.jpg";
 import afterImage_1 from "@/public/static/slider/1_after.jpg";
 import beforeImage_2 from "@/public/static/slider/2_before.jpg";
@@ -25,13 +23,14 @@ const BeforeAfterSlider = () => {
       <Swiper
         spaceBetween={30}
         navigation={true}
-        pagination={{ clickable: true }}
+        loop
+        pagination={{ clickable: true, dynamicBullets: true, dynamicMainBullets: 2 }}
         modules={[Navigation, Pagination]}
         className="max-w-5xl mx-auto"
       >
         {/* Slide 1 */}
         <SwiperSlide>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8">
+          <div className="flex font-Halenoir flex-col md:flex-row justify-center items-center gap-8">
             {/* Before Image */}
             <div className="relative">
               <Image

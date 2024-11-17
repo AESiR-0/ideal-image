@@ -4,12 +4,11 @@ const Footer = () => {
       <div className="container mx-auto px-6 lg:px-20 text-center md:text-left">
         {/* Offer Section */}
         <p className="text-sm mb-6 leading-relaxed md:mb-0">
-          *Offer valid at participating locations only. Offer valid from
-          November 1, 2024, to December 1, 2024. All customers are eligible to
-          purchase select bundles of Laser Hair Removal & Packages at select
-          prices for a limited time. Non-transferable, may not be applied to
-          exchanges, returns, credit card payments, or gift cards. Offer is
-          subject to change and/or end at any time.
+          *Offer valid from November 1, 2024, to November 30, 2024. All customers
+          are eligible to purchase select bundles of Laser Hair Removal 9
+          Packages select prices for a limited time. Non-transferable, may not
+          be applied to exchanges, returns, credit card payments, gift cards.
+          Offer is subject to change and/or end at any time.
         </p>
 
         {/* Footer Links */}
