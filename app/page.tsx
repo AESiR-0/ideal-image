@@ -6,6 +6,7 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import Footer from "./components/Footer";
 import Sections from "./components/Sections";
 import ClosingCTA from "./components/ClosingCTA";
+import FAQs from "./components/FAQs";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Sections />
       <TestimonialsCarousel />
       <ClosingCTA />
+      <FAQs />
       <Footer />
     </div>
   );
