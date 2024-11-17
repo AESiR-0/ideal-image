@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-
 const Halenoir = localFont({
   src: [
     {
@@ -13,7 +12,6 @@ const Halenoir = localFont({
       path: "./fonts/Halenoir-Medium.woff2",
       weight: "400",
     },
-    { path: "./fonts/Halenoir-Bold.woff2", weight: "700" },
     {
       path: "./fonts/Halenoir-Black.woff2",
       weight: "900",
