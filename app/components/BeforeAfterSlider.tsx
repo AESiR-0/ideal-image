@@ -1,9 +1,10 @@
 "use client";
 
-import React, { createContext } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 import beforeImage_1 from "@/public/static/slider/1_before.jpg";
@@ -13,7 +14,7 @@ import afterImage_2 from "@/public/static/slider/2_after.jpg";
 
 const BeforeAfterSlider = () => {
   return (
-    <div className="bg-white py-16">
+    <div className="bg-white py-16 relative">
       {/* Section Title */}
       <h2 className="text-center text-3xl font-Begum font-bold text-gray-800 mb-8">
         Real People. Real Results.
@@ -24,13 +25,13 @@ const BeforeAfterSlider = () => {
         spaceBetween={30}
         navigation={true}
         loop
-        pagination={{ clickable: true, dynamicBullets: true, dynamicMainBullets: 2 }}
+        pagination={{ clickable: true, dynamicBullets: true }}
         modules={[Navigation, Pagination]}
-        className="max-w-5xl mx-auto"
+        className="max-w-5xl mx-auto before-after-slider"
       >
         {/* Slide 1 */}
         <SwiperSlide>
-          <div className="flex font-Halenoir flex-col md:flex-row justify-center items-center gap-8">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-8">
             {/* Before Image */}
             <div className="relative">
               <Image
@@ -89,7 +90,6 @@ const BeforeAfterSlider = () => {
             </div>
           </div>
         </SwiperSlide>
-        {/* Additional slides can be added similarly */}
       </Swiper>
 
       {/* Footer Text */}

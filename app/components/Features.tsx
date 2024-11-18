@@ -3,7 +3,6 @@ import Image from "next/image";
 import quickTreatments from "@/public/static/features/2.png";
 import permanentResults from "@/public/static/features/4.png";
 import comfort from "@/public/static/features/3.png";
-
 export default function Features() {
   const features = [
     {
@@ -28,7 +27,7 @@ export default function Features() {
     <section className="bg-[#f6f4f2] py-20">
       <div className="container mx-auto px-6 md:px-20 font-Begum">
         {/* Heading */}
-        <h1 className="text-center flex flex-col  text-4xl font-bold leading-snug mb-6 text-[#550640]">
+        <h1 className="text-center flex flex-col text-4xl font-bold leading-snug mb-6 text-[#550640]">
           Put down the razor. Cancel your waxing appointments. <br /> Get your
           time back and silky-smooth skin, too.
         </h1>
@@ -53,22 +52,21 @@ export default function Features() {
           ))}
         </div>
       </div>
-      <div className="container  my-10 mx-auto px-6 md:px-20 font-Begum">
+      <div className="container my-10 mx-auto px-6 md:px-20 font-Begum">
         {/* Heading */}
-        <h1 className="text-center flex flex-col  text-4xl font-bold leading-snug mb-6 text-[#550640]">
+        <h1 className="text-center flex flex-col text-4xl font-bold leading-snug mb-6 text-[#550640]">
           Our cutting-edge treatments offer:
         </h1>
         <div className="grid gap-12 sm:gap-16 md:gap-24 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col items-center text-center">
             <video
-              src="/videos/underarms.mp4"
               className="w-full h-auto mb-4"
-              controls={false}
-              loop
               autoPlay
+              playsInline
+              muted
+              loop
             >
               <source src="/videos/underarms.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
             </video>
             <p className="text-gray-600">Underarms</p>
           </div>
@@ -76,26 +74,22 @@ export default function Features() {
             <video
               src="/videos/legs.mp4"
               autoPlay
-              className="w-full h-auto mb-4"
-              controls={false}
+              muted
+              playsInline
               loop
-            >
-              <source src="/videos/legs.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+              className="w-full h-auto mb-4"
+            ></video>
             <p className="text-gray-600">Legs</p>
           </div>
           <div className="flex flex-col items-center text-center">
             <video
               src="/videos/bikini.mp4"
               autoPlay
+              muted
               loop
+              playsInline
               className="w-full h-auto mb-4"
-              controls={false}
-            >
-              <source src="/videos/bikini.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            ></video>
             <p className="text-gray-600">Bikini</p>
           </div>
         </div>

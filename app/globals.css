@@ -11,3 +11,18 @@ body {
     --radius: 0.5rem;
   }
 }
+
+/* Customize Swiper bubble pagination */
+.before-after-slider .swiper-pagination-bullet {
+  background-color: #d1d5db; /* Light gray color */
+  width: 12px;
+  height: 12px;
+  opacity: 1; /* Ensure full visibility */
+  margin: 0 6px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.before-after-slider .swiper-pagination-bullet-active {
+  background-color: #550640; /* Make active bubble distinct */
+  transform: scale(1.2); /* Enlarge the active bubble */
+}
