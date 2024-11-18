@@ -25,9 +25,9 @@ export default function Features() {
 
   return (
     <section className="bg-[#f6f4f2] py-20">
-      <div className="container mx-auto px-6 md:px-20 font-Begum">
+      <div className="container max-md:my-28 mx-auto px-6 md:px-20 font-Begum">
         {/* Heading */}
-        <h1 className="text-center flex flex-col text-4xl font-bold leading-snug mb-6 text-[#550640]">
+        <h1 className="text-center max-md:text-2xl flex flex-col text-4xl font-bold leading-snug mb-6 text-[#550640]">
           Put down the razor. Cancel your waxing appointments. <br /> Get your
           time back and silky-smooth skin, too.
         </h1>

@@ -86,8 +86,8 @@ const TestimonialsCarousel = () => {
   };
 
   return (
-    <div className="w-full font-Halenoir max-w-5xl py-10 h-full px-5 mx-auto space-y-6 relative">
-      <h2 className="text-center font-Begum text-4xl my-10 font-bold">
+    <div className="w-full font-Halenoir max-w-5xl py-10 max-md:p-0 h-full px-5 mx-auto space-y-6 relative">
+      <h2 className="text-center border font-Begum text-4xl my-10 font-bold">
         Hear from Our Happy Clients!
       </h2>
 
