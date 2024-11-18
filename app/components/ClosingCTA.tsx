@@ -1,7 +1,7 @@
 import Link from "next/link";
 const ClosingCTA = () => {
   return (
-    <div className="bg-[#550640] py-16 font-serif text-center">
+    <div className="bg-[#550640] py-16 font-Begum text-center">
       {/* Headline */}
       <h2 className="text-3xl text-white md:text-4xl font-bold mb-4">
         Ready for Smooth, Hair-Free Skin?

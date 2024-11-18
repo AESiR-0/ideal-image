@@ -86,8 +86,8 @@ const TestimonialsCarousel = () => {
   };
 
   return (
-    <div className="w-full max-w-5xl py-10 h-full px-5 mx-auto space-y-6 relative">
-      <h2 className="text-center text-4xl font-serif my-10 font-bold">
+    <div className="w-full font-Halenoir max-w-5xl py-10 h-full px-5 mx-auto space-y-6 relative">
+      <h2 className="text-center font-Begum text-4xl my-10 font-bold">
         Hear from Our Happy Clients!
       </h2>
 
@@ -105,12 +105,14 @@ const TestimonialsCarousel = () => {
               )}
             >
               <CardContent>
-                <p className="text-muted-foreground text-sm">
-                  {testimonial.feedback}
-                </p>
+                <blockquote>
+                  <p className="text-muted-foreground italic  text-sm">
+                    " {testimonial.feedback} "
+                  </p>
+                </blockquote>
               </CardContent>
               <CardHeader>
-                <CardTitle>{testimonial.name}</CardTitle>
+                <CardTitle>- {testimonial.name}</CardTitle>
               </CardHeader>
             </Card>
           </div>

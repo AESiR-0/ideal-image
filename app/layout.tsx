@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${Halenoir.variable} ${Begum.variable} overflow-x-hidden w-full antialiased`}
+        className={`${Halenoir.variable} font-Halenoir ${Begum.variable} overflow-x-hidden w-full antialiased`}
       >
         {children}
       </body>

@@ -59,8 +59,9 @@ const AccordionMain: React.FC = () => {
   return (
     <section className="container h-full min-h-screen py-20 max-md:flex-col items-center flex gap-10 justify-center">
       <div className="w-[55%]  flex flex-col justify-center items-start ">
-        <h2 className="text-6xl font-serif mb-4 ">FAQs</h2>
-        <p className="w-full mb-4">Common Questions, Answered</p>
+        <h2 className="text-6xl font-Begum mb-4 ">
+          Common Questions, Answered
+        </h2>
         <div className="border-t w-full border-gray-300">
           {contentJson.map((item, index) => {
             return (

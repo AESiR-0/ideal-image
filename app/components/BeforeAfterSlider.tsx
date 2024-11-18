@@ -15,7 +15,7 @@ const BeforeAfterSlider = () => {
   return (
     <div className="bg-white py-16">
       {/* Section Title */}
-      <h2 className="text-center text-3xl font-serif font-bold text-gray-800 mb-8">
+      <h2 className="text-center text-3xl font-Begum font-bold text-gray-800 mb-8">
         Real People. Real Results.
       </h2>
 

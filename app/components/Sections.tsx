@@ -77,7 +77,7 @@ const SpecialOffer = () => {
       className="bg-[#f6f4f2] py-12 my-20 px-6 text-center"
       id="black-friday-offer"
     >
-      <h2 className="text-4xl font-bold text-[#550640] font-serif">
+      <h2 className="text-4xl font-bold text-[#550640] font-Begum">
         {blackFridayOffer.headline}
       </h2>
       <p className="text-lg mt-4 text-gray-700">
@@ -99,7 +99,7 @@ const EasySteps = () => {
     <section className="bg-[#f6f4f2] py-12 px-6">
       <div className="max-w-4xl mx-auto">
         {/* Headline */}
-        <h2 className="text-4xl font-bold text-[#550640] text-center font-serif">
+        <h2 className="text-4xl font-bold text-[#550640] text-center font-Begum">
           3 Easy Steps to the Skin You’ll Love
         </h2>
 
@@ -113,7 +113,7 @@ const EasySteps = () => {
               <div className="bg-[#550640] text-white h-16 w-16 flex items-center justify-center rounded-full mb-4">
                 {step.icon}
               </div>
-              <h3 className="text-lg font-bold text-[#550640] font-serif">
+              <h3 className="text-lg font-bold text-[#550640] font-Begum">
                 {step.title}
               </h3>
               <p className="mt-2 text-sm text-gray-600">{step.description}</p>
