@@ -1,4 +1,66 @@
+"use client"
+import { useState } from "react";
+
 const HeroSection = () => {
+  // State to manage form input values
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    zipCode: "",
+    phone: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
+
+  // Handle form input changes
+  const handleInputChange = (e: { target: { name: any; value: any; }; }) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Basic form validation
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.zipCode || !formData.phone) {
+      setError("All fields are required!");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      // Make a POST request to your backend (API endpoint)
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        // Successfully submitted
+        alert("Form submitted successfully!");
+        setFormData({ firstName: "", lastName: "", email: "", zipCode: "", phone: "" });
+      } else {
+        // Handle API errors
+        setError(result?.message || "Something went wrong!");
+      }
+    } catch (error) {
+      // Handle network errors
+      setError("Network error. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="relative text-white font-sans">
       {/* Row 1: Hero Image */}
@@ -28,48 +90,66 @@ const HeroSection = () => {
           </h2>
 
           {/* Form */}
-          <form className="space-y-6 w-full">
-            <div className="flex flex-col md:flex-row gap-4">
-              <input
-                type="text"
-                placeholder="First Name*"
-                className="flex-1 p-4 border rounded-md focus:ring-2 focus:ring-[#550640] focus:outline-none"
-                required
-              />
-              <input
-                type="text"
-                placeholder="Last Name*"
-                className="flex-1 p-4 border rounded-md focus:ring-2 focus:ring-[#550640] focus:outline-none"
-                required
-              />
-            </div>
-            <div className="flex flex-col md:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="Email*"
-                className="flex-1 p-4 border rounded-md focus:ring-2 focus:ring-[#550640] focus:outline-none"
-                required
-              />
-              <input
-                type="text"
-                placeholder="ZIP Code*"
-                className="flex-1 p-4 border rounded-md focus:ring-2 focus:ring-[#550640] focus:outline-none"
-                required
-              />
-            </div>
+        <form onSubmit={handleSubmit} className="space-y-6 w-full">
+          <div className="flex flex-col md:flex-row gap-4">
             <input
-              type="tel"
-              placeholder="Phone*"
-              className="w-full p-4 border rounded-md focus:ring-2 focus:ring-[#550640] focus:outline-none"
+              type="text"
+              name="firstName"
+              placeholder="First Name*"
+              value={formData.firstName}
+              onChange={handleInputChange}
+              className="flex-1 p-4 border rounded-md focus:ring-2 focus:ring-[#550640] focus:outline-none"
               required
             />
-            <button
-              type="submit"
-              className="w-full bg-[#550640] text-white font-bold py-4 rounded-md hover:bg-[#550640a7] transition-all duration-300"
-            >
-              Submit
-            </button>
-          </form>
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name*"
+              value={formData.lastName}
+              onChange={handleInputChange}
+              className="flex-1 p-4 border rounded-md focus:ring-2 focus:ring-[#550640] focus:outline-none"
+              required
+            />
+          </div>
+          <div className="flex flex-col md:flex-row gap-4">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email*"
+              value={formData.email}
+              onChange={handleInputChange}
+              className="flex-1 p-4 border rounded-md focus:ring-2 focus:ring-[#550640] focus:outline-none"
+              required
+            />
+            <input
+              type="text"
+              name="zipCode"
+              placeholder="ZIP Code*"
+              value={formData.zipCode}
+              onChange={handleInputChange}
+              className="flex-1 p-4 border rounded-md focus:ring-2 focus:ring-[#550640] focus:outline-none"
+              required
+            />
+          </div>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone*"
+            value={formData.phone}
+            onChange={handleInputChange}
+            className="w-full p-4 border rounded-md focus:ring-2 focus:ring-[#550640] focus:outline-none"
+            required
+          />
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full bg-[#550640] text-white font-bold py-4 rounded-md hover:bg-[#550640a7] transition-all duration-300"
+          >
+            {isSubmitting ? "Submitting..." : "Submit"}
+          </button>
+        </form>
+        {/* Error or Success Message */}
+        {error && <p className="text-xs text-red-600 mt-4">{error}</p>}
 
           {/* Disclaimer */}
           <p className="text-xs text-gray-600 mt-4">

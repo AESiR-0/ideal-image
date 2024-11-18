@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import postData from "@/app/app/lib/googlesheetHandler";
+import postData from "@/lib/googlesheetHandler";
 
 export async function POST(request: Request) {
   try {

@@ -1,90 +1,35 @@
 import Image from "next/image";
 import WhyImage from "@/public/static/WhyChooseUS.jpg";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserMd, faCogs, faCheckCircle, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 const cardContent = [
   {
     title: "Licensed Medical Professionals",
     description: "Led Treatments: Our experts ensure safe, effective care.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth="2"
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M9.75 3v11.25m4.5-11.25v11.25m-6.75 6.75h9"
-        />
-      </svg>
-    ),
+    icon: <FontAwesomeIcon icon={faUserMd} className="w-6 h-6 text-white" />,
   },
   {
     title: "Tailored to You",
     description: "Treatments customized for every skin tone and hair type.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth="2"
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-      </svg>
-    ),
+    icon: <FontAwesomeIcon icon={faCogs} className="w-6 h-6 text-white" />,
   },
   {
     title: "Proven Results",
     description: "Backed by science with over 20 million treatments performed.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth="2"
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M16.5 10.5L12 15l-4.5-4.5M12 15V6"
-        />
-      </svg>
-    ),
+    icon: <FontAwesomeIcon icon={faCheckCircle} className="w-6 h-6 text-white" />,
   },
   {
     title: "Convenient Locations",
-    description:
-      "Get treated close to home with over 150 locations to choose from.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth="2"
-        stroke="currentColor"
-        className="w-6 h-6"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M3.75 6h16.5M3.75 12h16.5m-10.5 6h10.5"
-        />
-      </svg>
-    ),
+    description: "Get treated close to home with over 150 locations to choose from.",
+    icon: <FontAwesomeIcon icon={faMapMarkerAlt} className="w-6 h-6 text-white" />,
   },
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section className=" my-8 py-5 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl w-full pb-5  font-extrabold text-gray-800 sm:text-4xl text-center">
+    <section className="my-8 py-5 px-4 sm:px-6 lg:px-8">
+      <h2 className="text-3xl w-full pb-5 font-extrabold text-gray-800 sm:text-4xl text-center">
         Why Choose Ideal Image?
       </h2>
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start gap-8">
@@ -100,9 +45,6 @@ const WhyChooseUs = () => {
 
         {/* Right Side: Content */}
         <div className="lg:w-1/2 w-full">
-          {/* Headline */}
-
-          {/* Cards */}
           <div className="mt-10 space-y-6">
             {cardContent.map((card, index) => (
               <div
