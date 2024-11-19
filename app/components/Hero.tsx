@@ -1,7 +1,9 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const HeroSection = () => {
+  const router = useRouter();
   // State to manage form input values
   const [formData, setFormData] = useState({
     firstName: "",
@@ -62,6 +64,7 @@ const HeroSection = () => {
           zipCode: "",
           phone: "",
         });
+        router.push("/thankyou");
       } else {
         // Handle API errors
         setError(result?.message || "Something went wrong!");
