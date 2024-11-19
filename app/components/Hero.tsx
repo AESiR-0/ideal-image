@@ -74,35 +74,35 @@ const HeroSection = () => {
     }
   };
   return (
-    <div className="relative text-white font-sans">
+    <div className="relative  h-full text-white font-sans">
       {/* Row 1: Hero Image */}
       <div className="h-[60vh] max-md:hidden static bg-cover bg-center bg-no-repeat bg-[url('/static/hero/girl_hero_section.jpg')]"></div>
 
       {/* Row 2: Black Friday Content */}
-      <div className="h-[40vh] max-md:h-screen bg-[#550640] flex max-md:flex-col items-center md:justify-between px-6 md:px-20 relative">
+      <div className="h-[30vh] max-md:h-screen max-md:bg-transparent bg-[#550640] flex max-md:flex-col items-center  md:justify-between   relative">
         {/* Full-width Black Friday Header */}
-        <h3 className="absolute max-md:w-screen max-md:static top-0 left-0 w-full uppercase text-lg md:text-3xl font-extrabold tracking-wide text-white bg-[#fdb1ef] text-left pl-[5rem] py-2">
+        <h3 className="absolute max-md:w-screen max-md:static top-0 left-0 w-full uppercase text-lg md:text-4xl font-extrabold tracking-wide text-white bg-[#fdb1ef] max-md:text-center text-left md:pl-[3rem] py-2">
           Black Friday Starts <span className="text-[#f6f4f2]">Now!</span>
         </h3>
 
         {/* Left Side: Black Friday Text */}
-        <div className="text-left max-md:text-center  w-full md:w-2/3 max-md:h-[40vh] md:mt-16">
-          <h1 className="text-2xl md:text-5xl font-extrabold">
-            Our Best Sale of the Year
+        <div className="text-left flex flex-col bg-[#550640]  max-md:text-center md:px-10  w-full md:w-2/3  ">
+          <h1 className="text-2xl    md:text-5xl font-extrabold">
+            Our Best Sale of the year
           </h1>
-          <h2 className="mt-2 text-xl md:text-3xl font-extrabold">
+          <h2 className="my-2 text-[#f6f4f2] text-xl md:text-3xl font-extrabold">
             Up to 85% Off Laser <span>Hair Removal*</span>
           </h2>
         </div>
 
         {/* Right Side: Absolute Form */}
-        <div className="absolute max-md:static max-md:text-center    md:right-[10%] md:transform md:-translate-y-1/2 bg-slate-100 p-12 rounded-lg text-slate-800 shadow-lg w-[400px] md:w-[500px] lg:w-[600px] z-10">
-          <h2 className="text-center text-xl md:text-2xl font-bold mb-6">
+        <div className="absolute max-md:static max-md:text-center    md:right-[5%] md:transform md:-translate-y-1/2 bg-slate-100 md:py-10 p-12 rounded-lg text-slate-800 shadow-lg max-md:w-full md:w-[500px] lg:w-[600px] z-10">
+          <h2 className="text-center text-3xl md:text-2xl font-bold mb-6">
             Unlock Your Savings
           </h2>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-6 w-full">
+          <form onSubmit={handleSubmit} className="space-y-6  w-full">
             <div className="flex flex-col md:flex-row gap-4">
               <input
                 type="text"

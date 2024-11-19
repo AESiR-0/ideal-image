@@ -26,3 +26,9 @@ body {
   background-color: #550640; /* Make active bubble distinct */
   transform: scale(1.2); /* Enlarge the active bubble */
 }
+
+@media (max-width: 380px) {
+  .SE {
+    margin-top: 11rem;
+  }
+}

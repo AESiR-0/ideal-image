@@ -86,8 +86,8 @@ const TestimonialsCarousel = () => {
   };
 
   return (
-    <div className="w-full font-Halenoir max-w-5xl py-10 max-md:p-0 h-full px-5 mx-auto space-y-6 relative">
-      <h2 className="text-center border font-Begum text-4xl my-10 font-bold">
+    <div className="w-full font-Halenoir max-w-5xl py-10 max-md:p-0 h-full px-5 mx-auto md:space-y-6 relative">
+      <h2 className="text-center  font-Begum text-4xl my-10 font-bold">
         Hear from Our Happy Clients!
       </h2>
 
@@ -136,7 +136,7 @@ const TestimonialsCarousel = () => {
       </button>
 
       {/* Pagination */}
-      <div className="flex justify-center h-full min-h-2/3 gap-2">
+      <div className="flex justify-center max-md:py-7 h-full min-h-2/3 gap-2">
         {Array.from({ length: testimonials.length }, (_, index) => (
           <button
             key={index}

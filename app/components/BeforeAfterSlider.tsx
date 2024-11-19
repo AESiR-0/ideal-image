@@ -14,7 +14,7 @@ import afterImage_2 from "@/public/static/slider/2_after.jpg";
 
 const BeforeAfterSlider = () => {
   return (
-    <div className="bg-white py-16 relative">
+    <div className="bg-white max-md:py-0  py-16 relative">
       {/* Section Title */}
       <h2 className="text-center text-3xl font-Begum font-bold text-gray-800 mb-8">
         Real People. Real Results.
@@ -27,13 +27,13 @@ const BeforeAfterSlider = () => {
         loop
         pagination={{ clickable: true, dynamicBullets: true }}
         modules={[Navigation, Pagination]}
-        className="max-w-5xl mx-auto before-after-slider"
+        className="max-w-[90%]  before-after-slider"
       >
         {/* Slide 1 */}
         <SwiperSlide>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8">
+          <div className="flex flex-col max-md:px-10 md:flex-row justify-center items-center gap-8">
             {/* Before Image */}
-            <div className="relative">
+            <div className="relative ">
               <Image
                 src={beforeImage_1}
                 alt="Before"
@@ -61,7 +61,7 @@ const BeforeAfterSlider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8">
+          <div className="flex flex-col max-md:px-10  md:flex-row justify-center items-center gap-8">
             {/* Before Image */}
             <div className="relative">
               <Image

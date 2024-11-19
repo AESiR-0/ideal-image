@@ -57,9 +57,9 @@ const AccordionSet = ({ title, content }: AccordionItemProps) => {
 
 const AccordionMain: React.FC = () => {
   return (
-    <section className="container h-full min-h-screen py-20 max-md:flex-col items-center flex gap-10 justify-center">
-      <div className="w-[55%]  flex flex-col justify-center items-start ">
-        <h2 className="text-6xl font-Begum mb-4 ">
+    <section className="container h-full max-md:min-h-full min-h-screen max-md:py-10 py-20 max-md:flex-col items-center flex gap-10 justify-center">
+      <div className="w-[55%] max-md:w-full max-md:px-10  flex flex-col justify-center items-start ">
+        <h2 className="text-6xl font-bold max-md:text-3xl max-md:text-center font-Begum mb-4 ">
           Common Questions, Answered
         </h2>
         <div className="border-t w-full border-gray-300">
