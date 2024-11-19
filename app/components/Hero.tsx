@@ -4,19 +4,21 @@ import { useState } from "react";
 
 const HeroSection = () => {
   const router = useRouter();
-  // State to manage form input values
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     zipCode: "",
     phone: "",
+    countryCode: "+1", // Default country code
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
 
-  // Handle form input changes
-  const handleInputChange = (e: { target: { name: any; value: any } }) => {
+  // Handle input changes
+  const handleInputChange = (e: {
+    target: { name: string; value: string };
+  }) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -29,14 +31,21 @@ const HeroSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Basic form validation
-    if (
-      !formData.firstName ||
-      !formData.lastName ||
-      !formData.email ||
-      !formData.zipCode ||
-      !formData.phone
-    ) {
+    // Validate ZIP code and phone number
+    if (!/^\d{5}$/.test(formData.zipCode)) {
+      setError("ZIP code must be exactly 5 digits.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!/^\d{10}$/.test(formData.phone)) {
+      setError("Phone number must be exactly 10 digits.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Validate other fields
+    if (!formData.firstName || !formData.lastName || !formData.email) {
       setError("All fields are required!");
       setIsSubmitting(false);
       return;
@@ -55,7 +64,6 @@ const HeroSection = () => {
       const result = await response.json();
 
       if (response.ok) {
-        // Successfully submitted
         alert("Form submitted successfully!");
         setFormData({
           firstName: "",
@@ -63,34 +71,34 @@ const HeroSection = () => {
           email: "",
           zipCode: "",
           phone: "",
+          countryCode: "+1",
         });
         router.push("/thankyou");
       } else {
-        // Handle API errors
         setError(result?.message || "Something went wrong!");
       }
     } catch (error) {
-      // Handle network errors
       setError("Network error. Please try again later.");
     } finally {
       setIsSubmitting(false);
     }
   };
+
   return (
-    <div className="relative  h-full text-white font-sans">
+    <div className="relative h-full text-white font-sans">
       {/* Row 1: Hero Image */}
       <div className="h-[60vh] max-md:hidden static bg-cover bg-center bg-no-repeat bg-[url('/static/hero/girl_hero_section.jpg')]"></div>
 
       {/* Row 2: Black Friday Content */}
-      <div className="h-[30vh] max-md:h-screen max-md:bg-transparent bg-[#550640] flex max-md:flex-col items-center  md:justify-between   relative">
+      <div className="h-[30vh] max-md:h-screen max-md:bg-transparent bg-[#550640] flex max-md:flex-col items-center md:justify-between relative">
         {/* Full-width Black Friday Header */}
         <h3 className="absolute max-md:w-screen max-md:static top-0 left-0 w-full uppercase text-lg md:text-4xl font-extrabold tracking-wide text-white bg-[#fdb1ef] max-md:text-center text-left md:pl-[3rem] py-2">
           Black Friday Starts <span className="text-[#f6f4f2]">Now!</span>
         </h3>
 
         {/* Left Side: Black Friday Text */}
-        <div className="text-left flex flex-col bg-[#550640]  max-md:text-center md:px-10  w-full md:w-2/3  ">
-          <h1 className="text-2xl    md:text-5xl font-extrabold">
+        <div className="text-left flex flex-col bg-[#550640] max-md:text-center md:px-10 w-full md:w-2/3">
+          <h1 className="text-2xl md:text-5xl font-extrabold">
             Our Best Sale of the year
           </h1>
           <h2 className="my-2 text-[#f6f4f2] text-xl md:text-3xl font-extrabold">
@@ -98,14 +106,14 @@ const HeroSection = () => {
           </h2>
         </div>
 
-        {/* Right Side: Absolute Form */}
-        <div className="absolute max-md:static max-md:text-center    md:right-[5%] md:transform md:-translate-y-1/2 bg-slate-100 md:py-10 p-12 rounded-lg text-slate-800 shadow-lg max-md:w-full md:w-[500px] lg:w-[600px] z-10">
+        {/* Right Side: Form */}
+        <div className="absolute max-md:static max-md:text-center md:right-[5%] md:transform md:-translate-y-1/2 bg-slate-100 md:py-10 p-12 rounded-lg text-slate-800 shadow-lg max-md:w-full md:w-[500px] lg:w-[600px] z-10">
           <h2 className="text-center text-3xl md:text-2xl font-bold mb-6">
             Unlock Your Savings
           </h2>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-6  w-full">
+          <form onSubmit={handleSubmit} className="space-y-6 w-full">
             <div className="flex flex-col md:flex-row gap-4">
               <input
                 type="text"
@@ -146,15 +154,29 @@ const HeroSection = () => {
                 required
               />
             </div>
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone*"
-              value={formData.phone}
-              onChange={handleInputChange}
-              className="w-full p-4 border rounded-md focus:ring-2 focus:ring-[#550640] focus:outline-none"
-              required
-            />
+            <div className="flex gap-4">
+              <select
+                name="countryCode"
+                value={formData.countryCode}
+                onChange={handleInputChange}
+                className="p-4 border rounded-md focus:ring-2 focus:ring-[#550640] focus:outline-none"
+              >
+                <option value="+1">United States (+1)</option>
+                <option value="+44">United Kingdom (+44)</option>
+                <option value="+91">India (+91)</option>
+                <option value="+61">Australia (+61)</option>
+                <option value="+81">Japan (+81)</option>
+              </select>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone*"
+                value={formData.phone}
+                onChange={handleInputChange}
+                className="flex-1 p-4 border rounded-md focus:ring-2 focus:ring-[#550640] focus:outline-none"
+                required
+              />
+            </div>
             <button
               type="submit"
               disabled={isSubmitting}
@@ -163,7 +185,7 @@ const HeroSection = () => {
               {isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </form>
-          {/* Error or Success Message */}
+          {/* Error Message */}
           {error && <p className="text-xs text-red-600 mt-4">{error}</p>}
 
           {/* Disclaimer */}
