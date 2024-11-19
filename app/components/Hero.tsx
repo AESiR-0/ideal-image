@@ -184,7 +184,7 @@ const HeroSection = () => {
                 name="countryCode"
                 value={formData.countryCode}
                 onChange={handleInputChange}
-                className="p-4 border rounded-md focus:ring-2 focus:ring-[#550640] focus:outline-none"
+                className="w-full md:w-auto p-4 border rounded-md focus:ring-2 focus:ring-[#550640] focus:outline-none"
               >
                 <option value="+1">United States (+1)</option>
                 <option value="+44">United Kingdom (+44)</option>
