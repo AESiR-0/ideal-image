@@ -7,11 +7,11 @@ type FormData = {
   email: string;
   zipCode: string;
   phone: string;
-  // utmSource: string | null;
-  // utmMedium: string | null;
-  // utmCampaign: string | null;
-  // utmTerm: string | null;
-  // pageURL: string;
+  utmSource: string | null;
+  utmMedium: string | null;
+  utmCampaign: string | null;
+  utmTerm: string | null;
+  pageURL: string;
 };
 
 export default async function postData(values: FormData) {
@@ -21,11 +21,11 @@ export default async function postData(values: FormData) {
     email,
     zipCode,
     phone,
-    // utmSource,
-    // utmMedium,
-    // utmCampaign,
-    // utmTerm,
-    // pageURL,
+    utmSource,
+    utmMedium,
+    utmCampaign,
+    utmTerm,
+    pageURL,
   } = values;
 
   // Auth setup
@@ -53,11 +53,11 @@ export default async function postData(values: FormData) {
             email,
             zipCode,
             phone,
-            // utmSource || "N/A",
-            // utmMedium || "N/A",
-            // utmCampaign || "N/A",
-            // utmTerm || "N/A",
-            // pageURL,
+            utmSource || "N/A",
+            utmMedium || "N/A",
+            utmCampaign || "N/A",
+            utmTerm || "N/A",
+            pageURL,
           ],
         ],
       },

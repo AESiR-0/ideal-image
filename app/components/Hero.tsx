@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const HeroSection = () => {
   const router = useRouter();
@@ -11,9 +11,29 @@ const HeroSection = () => {
     zipCode: "",
     phone: "",
     countryCode: "+1", // Default country code
+    utmSource: "",
+    utmMedium: "",
+    utmCampaign: "",
+    utmTerm: "",
+    pageURL: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
+
+  // Extract UTM parameters from URL and set them in formData
+  useEffect(() => {
+    const url = window.location.href; // Get the full page URL
+    const urlParams = new URLSearchParams(window.location.search); // Parse the query string
+
+    setFormData((prevData) => ({
+      ...prevData,
+      utmSource: urlParams.get("utm_source") || "",
+      utmMedium: urlParams.get("utm_medium") || "",
+      utmCampaign: urlParams.get("utm_campaign") || "",
+      utmTerm: urlParams.get("utm_term") || "",
+      pageURL: url,
+    }));
+  }, []);
 
   // Handle input changes
   const handleInputChange = (e: {
@@ -72,6 +92,11 @@ const HeroSection = () => {
           zipCode: "",
           phone: "",
           countryCode: "+1",
+          utmSource: "",
+          utmMedium: "",
+          utmCampaign: "",
+          utmTerm: "",
+          pageURL: "",
         });
         router.push("/thankyou");
       } else {
