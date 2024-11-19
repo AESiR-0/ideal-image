@@ -26,7 +26,7 @@ const BeforeAfterSlider = () => {
         navigation={true}
         loop
         pagination={{ clickable: true }}
-        modules={[Navigation, Pagination]}
+        modules={[Navigation]}
         className="max-w-[90%]  before-after-slider"
       >
         {/* Slide 1 */}
