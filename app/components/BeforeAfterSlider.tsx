@@ -25,7 +25,7 @@ const BeforeAfterSlider = () => {
         spaceBetween={30}
         navigation={true}
         loop
-        pagination={{ clickable: true, dynamicBullets: true }}
+        pagination={{ clickable: true }}
         modules={[Navigation, Pagination]}
         className="max-w-[90%]  before-after-slider"
       >
