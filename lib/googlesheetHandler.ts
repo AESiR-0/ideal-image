@@ -2,11 +2,11 @@ import { google } from "googleapis";
 
 // Update FormData type to include all required fields
 type FormData = {
-  fullName: string;
+  firstName: string;
   lastName: string;
   email: string;
   zipCode: string;
-  phoneNumber: string;
+  phone: string;
   // utmSource: string | null;
   // utmMedium: string | null;
   // utmCampaign: string | null;
@@ -16,11 +16,11 @@ type FormData = {
 
 export default async function postData(values: FormData) {
   const {
-    fullName,
+    firstName,
     lastName,
     email,
     zipCode,
-    phoneNumber,
+    phone,
     // utmSource,
     // utmMedium,
     // utmCampaign,
@@ -43,16 +43,16 @@ export default async function postData(values: FormData) {
   try {
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: "Sheet1!A1:J1", // Update the sheet name and range if necessary
+      range: "Sheet1", // Update the sheet name and range if necessary
       valueInputOption: "RAW",
       requestBody: {
         values: [
           [
-            fullName,
+            firstName,
             lastName,
             email,
             zipCode,
-            phoneNumber,
+            phone,
             // utmSource || "N/A",
             // utmMedium || "N/A",
             // utmCampaign || "N/A",
