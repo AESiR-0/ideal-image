@@ -4,7 +4,7 @@ const ThankYouPage = () => {
   return (
     <div className="min-h-screen bg-[#f6f4f2] flex items-center justify-center p-6">
       <div className="max-w-3xl w-full bg-white shadow-lg rounded-lg p-8 text-center">
-        <h1 className="text-4xl font-bold text-[#550640] mb-4">What’s Next?</h1>
+        <h1 className="text-4xl font-bold text-[#550640] mb-4">What's Next?</h1>
         <p className="text-lg text-gray-700 mb-6">
           You're just one step away from transforming your life!
         </p>
@@ -18,14 +18,14 @@ const ThankYouPage = () => {
           <h2 className="text-2xl font-semibold mb-2">Black Friday Offer</h2>
           <p className="text-lg">
             Take advantage of our Black Friday offer—
-            <strong>up to 85% off</strong>—by scheduling your consultation
+            <strong>additional $500 off</strong>—by scheduling your consultation
             today!
           </p>
         </div>
 
         <div className="text-left space-y-4">
           <h3 className="text-2xl font-bold text-[#550640] mb-4">
-            Here’s what to expect during your in-person consultation:
+            Here's what to expect during your in-person consultation:
           </h3>
           <div className="flex items-start space-x-4">
             <span className="text-[#550640] font-bold">✔</span>
@@ -37,7 +37,7 @@ const ThankYouPage = () => {
           <div className="flex items-start space-x-4">
             <span className="text-[#550640] font-bold">✔</span>
             <p className="text-gray-700">
-              <strong>Save Money:</strong> We’ll bundle and customize treatments
+              <strong>Save Money:</strong> We'll bundle and customize treatments
               to fit your beauty goals.
             </p>
           </div>
@@ -51,7 +51,7 @@ const ThankYouPage = () => {
         </div>
 
         <p className="text-lg text-gray-800 mt-6">
-          You’re so close to achieving your beauty goals and making a lasting
+          You're so close to achieving your beauty goals and making a lasting
           change!
         </p>
       </div>
