@@ -41,7 +41,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Google Analytics */}
-        if(process.env.NODE_ENV !== 'production'){" "}
+        if(process.env.NODE_ENV !== 'DEVELOPMENT'){" "}
         {
           <>
             <script
