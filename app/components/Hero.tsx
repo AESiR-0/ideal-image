@@ -122,7 +122,7 @@ const HeroSection = () => {
         </h3>
 
         {/* Left Side: Black Friday Text */}
-        <div className="text-left flex flex-col bg-[#550640] max-md:text-center md:px-10 w-full md:w-2/3">
+        <div className="text-left flex flex-col mt-5 bg-[#550640] max-md:text-center md:px-10 w-full md:w-2/3">
           <h1 className="text-2xl md:text-5xl font-extrabold">
             Our Best Sale of the year
           </h1>
