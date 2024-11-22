@@ -112,7 +112,7 @@ const HeroSection = () => {
   return (
     <div className="relative h-full text-white font-sans">
       {/* Row 1: Hero Image */}
-      <div className="h-[60vh] max-md:hidden static bg-cover bg-center bg-no-repeat bg-[url('/static/hero/girl_hero_section.jpg')]"></div>
+      <div className="h-[60vh] max-md:h-[40vh] max-md:bg-left max-md:bg-cover static bg-cover bg-center bg-no-repeat bg-[url('/static/hero/girl_hero_section.jpg')]"></div>
 
       {/* Row 2: Black Friday Content */}
       <div className="h-[30vh] max-md:h-screen max-md:bg-transparent bg-[#550640] flex max-md:flex-col items-center md:justify-between relative">
