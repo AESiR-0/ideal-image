@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import logo from "@/public/static/logo/navbar.svg";
 
 const Halenoir = localFont({
   src: [
@@ -30,6 +31,8 @@ const Begum = localFont({
 export const metadata = {
   title: "Ideal Image",
   description: "Best in the USA",
+  ogImage: logo,
+  
 };
 
 export default function RootLayout({
@@ -40,28 +43,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        if(process.env.NODE_ENV !== 'DEVELOPMENT')
-        {
-          <>
-            <script
-              async
-              src="https://www.googletagmanager.com/gtag/js?id=G-L68SB695HB"
-            ></script>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-L68SB695HB"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-L68SB695HB');
             `,
-              }}
-            ></script>
+          }}
+        ></script>
 
-            {/* RB2B Script */}
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
+        {/* RB2B Script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
               !function () {
                 var reb2b = window.reb2b = window.reb2b || [];
                 if (reb2b.invoked) return;
@@ -91,10 +91,8 @@ export default function RootLayout({
                 reb2b.load("VN080H4YME6J");
               }();
             `,
-              }}
-            ></script>
-          </>
-        }
+          }}
+        ></script>
       </head>
       <body
         className={`${Halenoir.variable} font-Halenoir ${Begum.variable} overflow-x-hidden w-full antialiased`}
