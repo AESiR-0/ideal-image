@@ -17,7 +17,7 @@ export default function Home() {
           <Image
             src="/static/logo/navbar.svg"
             alt="Company Logo"
-            width={200}
+            width={150}
             height={100}
           />
         </div>

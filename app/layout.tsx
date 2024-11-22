@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import logo from "@/public/static/logo/navbar.svg";
+import logo from "@/public/static/symbol/32_32.png";
 
 const Halenoir = localFont({
   src: [
@@ -32,7 +32,6 @@ export const metadata = {
   title: "Ideal Image",
   description: "Best in the USA",
   ogImage: logo,
-  
 };
 
 export default function RootLayout({

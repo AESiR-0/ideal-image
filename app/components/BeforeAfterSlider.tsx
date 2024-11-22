@@ -39,7 +39,7 @@ const BeforeAfterSlider = () => {
                 alt="Before"
                 className="rounded-lg object-cover"
                 width={500}
-                height={500}
+                height={300}
               />
               <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-gray-600 text-white text-lg px-4 py-1 rounded-full">
                 BEFORE
@@ -52,7 +52,7 @@ const BeforeAfterSlider = () => {
                 alt="After"
                 className="rounded-lg object-cover"
                 width={500}
-                height={500}
+                height={300}
               />
               <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-gray-600 text-white text-lg px-4 py-1 rounded-full">
                 AFTER
@@ -69,7 +69,7 @@ const BeforeAfterSlider = () => {
                 alt="Before"
                 className="rounded-lg object-cover"
                 width={500}
-                height={500}
+                height={300}
               />
               <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-gray-600 text-white text-lg px-4 py-1 rounded-full">
                 BEFORE
@@ -82,7 +82,7 @@ const BeforeAfterSlider = () => {
                 alt="After"
                 className="rounded-lg object-cover"
                 width={500}
-                height={500}
+                height={300}
               />
               <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-gray-600 text-white text-lg px-4 py-1 rounded-full">
                 AFTER
@@ -93,9 +93,7 @@ const BeforeAfterSlider = () => {
       </Swiper>
 
       {/* Footer Text */}
-      <p className="text-center text-gray-500 text-sm mt-4">
-        Results may vary.
-      </p>
+      <p className="text-center text-gray-500 text-sm ">Results may vary.</p>
     </div>
   );
 };
