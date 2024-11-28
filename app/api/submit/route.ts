@@ -1,26 +1,32 @@
 import { NextResponse } from "next/server";
 import postData from "@/lib/googlesheetHandler";
+import pushToSalesforce from "@/lib/salesforceHandler";
 
 export async function POST(request: Request) {
   try {
-    // Parse the incoming JSON data
     const data = await request.json();
 
-    // Example: Perform some action with the data (logging here)
     console.log("Received data:", data);
+
+    // Google Sheets Integration
     try {
-      const res = await postData(data);
-      return NextResponse.json(
-        { message: "Data received successfully", data },
-        { status: 200 }
-      );
-    } catch (error) {
-      // Example: Return a success response
-      return NextResponse.json(
-        { message: "Failed to submit data", error },
-        { status: 500 }
-      );
+      await postData(data);
+    } catch (googleSheetError) {
+      console.error("Google Sheets Error:", googleSheetError);
     }
+
+    // Salesforce Integration
+    try {
+      const salesforceResponse = await pushToSalesforce(data);
+      console.log("Salesforce Response:", salesforceResponse);
+    } catch (salesforceError) {
+      console.error("Salesforce Error:", salesforceError);
+    }
+
+    return NextResponse.json(
+      { message: "Data processed successfully", data },
+      { status: 200 }
+    );
   } catch (error) {
     console.error("Error handling POST request:", error);
     return NextResponse.json(

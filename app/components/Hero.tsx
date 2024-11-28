@@ -1,6 +1,9 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
+
+const uniqueId = uuidv4();
 
 const HeroSection = () => {
   const router = useRouter();
@@ -32,6 +35,7 @@ const HeroSection = () => {
       utmCampaign: urlParams.get("utm_campaign") || "",
       utmTerm: urlParams.get("utm_term") || "",
       pageURL: url,
+      prospectId: uniqueId,
     }));
   }, []);
 
