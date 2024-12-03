@@ -44,6 +44,16 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {" "}
+        <Script>
+          {`<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PX2PFN3F');</script>
+<!-- End Google Tag Manager -->
+`}
+        </Script>
         {/* ReB2B Script */}
         <Script id="reb2b-script" strategy="afterInteractive">
           {`!function () {
@@ -153,6 +163,10 @@ export default function RootLayout({
       <body
         className={`${Halenoir.variable} font-Halenoir ${Begum.variable} overflow-x-hidden w-full antialiased`}
       >
+        <Script>{`<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PX2PFN3F"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->`}</Script>
         {children}
       </body>
     </html>
