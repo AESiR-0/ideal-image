@@ -1,4 +1,4 @@
-const API_URL = "http://api.idealimage.com/";
+const API_URL = "http://api.idealimage.com/v2/prospect";
 
 /**
  * Gets a prospect ID from the API.
@@ -54,7 +54,7 @@ const pushToAPI = async (formData: Record<string, any>) => {
       ],
     };
 
-    const response = await fetch(API_URL, {
+    const response = await fetch((API_URL + '/' + prospectId + "/lead"), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
