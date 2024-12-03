@@ -1,14 +1,38 @@
 const API_URL = "http://api.idealimage.com/";
 
 /**
+ * Gets a prospect ID from the API.
+ * @returns {Promise<string>} The prospect ID.
+ */
+const getProspectId = async (): Promise<string> => {
+  const response = await fetch("http://api.idealimage.com/v1/prospect", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(`Prospect API error: ${errorData.message || response.statusText}`);
+  }
+
+  const result = await response.json();
+  return result.prospect_id;
+};
+
+/**
  * Pushes form data to the API.
  * @param {Object} formData - The form data to be sent to the API.
  * @returns {Promise<Object>} The response from the API.
  */
 const pushToAPI = async (formData: Record<string, any>) => {
   try {
+    // First get the prospect ID
+    const prospectId = await getProspectId();
+
     const payload = {
-      prospect_id: formData.prospectId,
+      prospect_id: prospectId,
       metas: [
         { key: "firstName", value: formData.firstName, type: "explicit" },
         { key: "lastName", value: formData.lastName, type: "explicit" },
