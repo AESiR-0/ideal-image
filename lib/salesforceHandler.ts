@@ -1,4 +1,4 @@
-const BASE = "https://api.idealimage.com/ ";
+const BASE = "https://api.idealimage.com/";
 
 
 /**
