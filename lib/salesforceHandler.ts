@@ -1,26 +1,38 @@
-const API_URL = "http://api.idealimage.com/v2/prospect";
+const BASE = "https://api.idealimage.com/ ";
+
 
 /**
  * Gets a prospect ID from the API.
  * @returns {Promise<string>} The prospect ID.
  */
 const getProspectId = async (): Promise<string> => {
-  const response = await fetch("http://api.idealimage.com/v1/prospect", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  try {
+    const response = await fetch((BASE + "v1/prospect"), {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+    });
 
-  if (!response.ok) {
-    const errorData = await response.json();
-    throw new Error(`Prospect API error: ${errorData.message || response.statusText}`);
+    // Log the response for debugging
+    const responseText = await response.json();
+    console.log('Prospect API Response:', responseText.id);
+
+    if (!response.ok) {
+      throw new Error(
+        `Prospect API error: Status ${response.status} - ${response.statusText}\nResponse: ${responseText}`
+      );
+    }
+
+
+    return responseText.id;
   }
-
-  const result = await response.json();
-  return result.prospect_id;
-};
-
+  catch (e: any) {
+    console.log(e);
+    throw e;
+  };
+}
 /**
  * Pushes form data to the API.
  * @param {Object} formData - The form data to be sent to the API.
@@ -53,8 +65,9 @@ const pushToAPI = async (formData: Record<string, any>) => {
         { key: "wantsContact", value: true, type: "explicit" },
       ],
     };
+    console.log(prospectId);
 
-    const response = await fetch((API_URL + '/' + prospectId + "/lead"), {
+    const response = await fetch((BASE + "v1/prospect"), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
