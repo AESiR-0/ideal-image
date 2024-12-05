@@ -152,7 +152,7 @@ const pushToAPI = async (formData: Record<string, any>) => {
             value: `${formData.countryCode}${formData.phone}`,
             type: "explicit",
           },
-          { key: "serviceTypeCode", value: "127", type: "implicit" },
+          { key: "serviceTypeCode", value: "108", type: "implicit" },
           { key: "zipcode", value: formData.zipCode, type: "explicit" },
           {
             key: "siteId",
