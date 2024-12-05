@@ -4,13 +4,83 @@ const BASE = "https://api.idealimage.com/";
  * Gets a prospect ID from the API.
  * @returns {Promise<string>} The prospect ID.
  */
-
-const getSiteId = async ({ identifierCenter }: { identifierCenter: string }): Promise<string> => {
-  const response = await fetch((BASE + "v1/center/identifier/" + identifierCenter));
-  const result = await response.json();
-  return result.siteID;
+interface Center {
+  id: number;
+  siteID: string;
+  googlePlaceID: string;
+  webName: string;
+  showOnWebsite: number;
+  corporate: number;
+  identifier: string;
+  googlePhone: string;
+  centerFriendlyName: string;
+  hoursOpenMonday: string | null;
+  hoursOpenTuesday: string | null;
+  hoursOpenWednesday: string | null;
+  hoursOpenThursday: string | null;
+  hoursOpenFriday: string | null;
+  hoursOpenSaturday: string | null;
+  hoursOpenSunday: string | null;
+  hoursCloseMonday: string | null;
+  hoursCloseTuesday: string | null;
+  hoursCloseWednesday: string | null;
+  hoursCloseThursday: string | null;
+  hoursCloseFriday: string | null;
+  hoursCloseSaturday: string | null;
+  hoursCloseSunday: string | null;
+  longitude: number;
+  latitude: number;
+  location: string;
+  address1: string;
+  address2: string | null;
+  city: string;
+  county: string;
+  state: string;
+  zip: string;
+  Status: string;
+  slug: string;
+  centerType: string;
+  uuid: string;
+  maxRoutingRadius: number;
+  opening_at: string;
+  listing_at: string;
+  routing_at: string;
+  routeLeads: number;
+  customTitle: string;
+  customDescription: string;
+  reputationSiteKey: string;
+  reviewsCount: number;
+  reviewsAverage: number;
+}
+// const getSiteId = async ({ identifierCenter }: { identifierCenter: string }): Promise<string> => {
+//   const response = await fetch((BASE + "v1/center/identifier/" + identifierCenter));
+//   const result = await response.json();
+//   return result.siteID;
+// }
+const checkNearestCenter = (nearestCenter: Center): boolean => {
+  if (nearestCenter.centerType === "franchise")
+    return true;
+  return false;
 }
 
+const getNearestCenter = async ({ zipCode }: { zipCode: string }): Promise<string> => {
+  try {
+    const response = await fetch((BASE + `/v1/centers/zip/${zipCode}?cache=true`));
+    const result = await response.json();
+    if (result.length < 0)
+      throw new Error("No center found");
+    else {
+      result.map((center: Center) => {
+        if (checkNearestCenter(center))
+          return center.siteID;
+      })
+    }
+    return "";
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
 
 const generateLead = async (prospectId: string): Promise<string> => {
   try {
@@ -50,9 +120,10 @@ const generateLead = async (prospectId: string): Promise<string> => {
  */
 const pushToAPI = async (formData: Record<string, any>) => {
   try {
+    const nearestCenter = await getNearestCenter(formData.zipCode);
     // First get the prospect ID
     // const prospectId = await getProspectId();
-    const siteId = await getSiteId(formData.identifier);
+    // const siteId = await getSiteId(formData.identifier);
     const payload = {
       // prospect_id: prospectId,
       metas: [
@@ -69,7 +140,7 @@ const pushToAPI = async (formData: Record<string, any>) => {
         { key: "zipcode", value: formData.zipCode, type: "explicit" },
         {
           key: "siteId",
-          value: "BA571C5F-2F80-47D2-9BA9-8C8DE7569042",
+          value: nearestCenter,
           type: "explicit",
         },
         { key: "wantsContact", value: true, type: "explicit" },
