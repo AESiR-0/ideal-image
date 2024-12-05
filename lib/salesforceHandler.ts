@@ -1,14 +1,24 @@
 const BASE = "https://api.idealimage.com/";
 
-
 /**
  * Gets a prospect ID from the API.
  * @returns {Promise<string>} The prospect ID.
  */
-const getProspectId = async (): Promise<string> => {
+
+const getSiteId = async ({ identifierCenter }: { identifierCenter: string }): Promise<string> => {
+  const response = await fetch((BASE + "v1/center/identifier/" + identifierCenter));
+  const result = await response.json();
+  return result.siteID;
+}
+
+
+const generateLead = async (prospectId: string): Promise<string> => {
   try {
     const response = await fetch((BASE + "v1/prospect"), {
       method: "POST",
+      body: JSON.stringify({
+        prospect_id: prospectId
+      }),
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json"
@@ -17,7 +27,7 @@ const getProspectId = async (): Promise<string> => {
 
     // Log the response for debugging
     const responseText = await response.json();
-    console.log('Prospect API Response:', responseText.id);
+    console.log('Prospect API Response:', responseText);
 
     if (!response.ok) {
       throw new Error(
@@ -41,14 +51,14 @@ const getProspectId = async (): Promise<string> => {
 const pushToAPI = async (formData: Record<string, any>) => {
   try {
     // First get the prospect ID
-    const prospectId = await getProspectId();
-
+    // const prospectId = await getProspectId();
+    const siteId = await getSiteId(formData.identifier);
     const payload = {
-      prospect_id: prospectId,
+      // prospect_id: prospectId,
       metas: [
         { key: "firstName", value: formData.firstName, type: "explicit" },
         { key: "lastName", value: formData.lastName, type: "explicit" },
-        { key: "flow", value: "franchise-lhr", type: "implicit" },
+        { key: "flow", value: "paid-lhr", type: "implicit" },
         { key: "email", value: formData.email, type: "explicit" },
         {
           key: "telephone",
@@ -65,7 +75,7 @@ const pushToAPI = async (formData: Record<string, any>) => {
         { key: "wantsContact", value: true, type: "explicit" },
       ],
     };
-    console.log(prospectId);
+    // console.log(prospectId);
 
     const response = await fetch((BASE + "v1/prospect"), {
       method: "POST",
@@ -81,7 +91,9 @@ const pushToAPI = async (formData: Record<string, any>) => {
     }
 
     const result = await response.json();
-    return result; // Return the API response
+    const status = await generateLead(result.id);
+    console.log('Prospect API Response:', status);
+    return status; // Return the API response
   } catch (error) {
     console.error("Error pushing data to API:", error);
     if (error instanceof Error) {
@@ -91,5 +103,6 @@ const pushToAPI = async (formData: Record<string, any>) => {
     }
   }
 };
+
 
 export default pushToAPI;
