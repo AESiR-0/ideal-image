@@ -52,6 +52,8 @@ interface Center {
   reviewsCount: number;
   reviewsAverage: number;
 }
+
+
 // const getSiteId = async ({ identifierCenter }: { identifierCenter: string }): Promise<string> => {
 //   const response = await fetch((BASE + "v1/center/identifier/" + identifierCenter));
 //   const result = await response.json();
@@ -66,13 +68,11 @@ const checkNearestCenter = (nearestCenter: Center): boolean => {
 const getNearestCenter = async ({ zipCode }: { zipCode: any }): Promise<string> => {
   try {
     const response = await fetch((BASE + `v1/centers/zip/${zipCode}/200?cache=true`));
-    const result = await response.json();
+    const result: { data: Center[] } = await response.json();
     let nearest = ""
 
-    if (result.data.length < 0)
+    if (result.data.length === 0)
       return '';
-    else if (result.data.length < 1)
-      return result.data[0].siteID;
     else {
       for (let i = 0; i < result.data.length; i++) {
         if (checkNearestCenter(result.data[i])) {
