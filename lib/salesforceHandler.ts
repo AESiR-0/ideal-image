@@ -1,5 +1,5 @@
 const BASE = "https://api.idealimage.com/";
-// const BASE = "https://api-dev02.puntpunt.fun/";
+// const BASE_Local = "https://api-dev01.puntpunt.fun/";
 
 /**
  * Gets a prospect ID from the API.
@@ -89,12 +89,10 @@ const getNearestCenter = async ({ zipCode }: { zipCode: any }): Promise<string> 
   }
 }
 
-const generateLead = async (): Promise<string> => {
+const generateLead = async (prospectId: string): Promise<string> => {
   try {
-    const response = await fetch((BASE + "v1/prospect"), {
-      method: "POST",
-      body: JSON.stringify({
-      }),
+    const response = await fetch((BASE + "v2/prospect/" + prospectId + "/lead"), {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json"
@@ -137,13 +135,13 @@ const pushToAPI = async (formData: Record<string, any>) => {
       flag = true;
 
     // First get the prospect ID
-    const prospectId = await generateLead();
+    // const prospectId = await getProspectId();
     // const siteId = await getSiteId(formData.identifier);
     let payload = {}
     if (flag) {
       payload =
       {
-        prospect_id: prospectId,
+        // prospect_id: prospectId,
         metas: [
           { key: "firstName", value: formData.firstName, type: "explicit" },
           { key: "lastName", value: formData.lastName, type: "explicit" },
@@ -166,8 +164,6 @@ const pushToAPI = async (formData: Record<string, any>) => {
       };
     } else
       payload = {
-        prospect_id: prospectId,
-
         metas: [
           { key: "firstName", value: formData.firstName, type: "explicit" },
           { key: "lastName", value: formData.lastName, type: "explicit" },
@@ -199,8 +195,9 @@ const pushToAPI = async (formData: Record<string, any>) => {
     }
 
     const result = await response.json();
-    console.log('Prospect API Response:', result);
-    return result; // Return the API response
+    const status = await generateLead(result.id);
+    console.log('Prospect API Response:', status);
+    return status; // Return the API response
   } catch (error) {
     console.error("Error pushing data to API:", error);
     if (error instanceof Error) {
