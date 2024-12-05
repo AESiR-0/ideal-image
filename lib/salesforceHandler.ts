@@ -1,4 +1,4 @@
-const BASE = "https://api.idealimage.com/";
+const BASE = "https://api-dev01.puntpunt.fun/";
 
 /**
  * Gets a prospect ID from the API.
@@ -63,14 +63,16 @@ const checkNearestCenter = (nearestCenter: Center): boolean => {
   return false;
 }
 
-const getNearestCenter = async ({ zipCode }: { zipCode: string }): Promise<string> => {
+const getNearestCenter = async ({ zipCode }: { zipCode: any }): Promise<string> => {
   try {
-    const response = await fetch((BASE + `/v1/centers/zip/${zipCode}?cache=true`));
+    const response = await fetch((BASE + `v1/centers/zip/${zipCode}?cache=true`));
     const result = await response.json();
-    if (result.length < 0)
+
+
+    if (result.data.length < 0)
       throw new Error("No center found");
     else {
-      result.map((center: Center) => {
+      result.data.map((center: Center) => {
         if (checkNearestCenter(center))
           return center.siteID;
       })
@@ -120,7 +122,10 @@ const generateLead = async (prospectId: string): Promise<string> => {
  */
 const pushToAPI = async (formData: Record<string, any>) => {
   try {
-    const nearestCenter = await getNearestCenter(formData.zipCode);
+    const zipCode = formData.zipCode;
+    // console.log(zipCode);
+    const nearestCenter = await getNearestCenter({ zipCode });
+
     // First get the prospect ID
     // const prospectId = await getProspectId();
     // const siteId = await getSiteId(formData.identifier);
@@ -177,3 +182,6 @@ const pushToAPI = async (formData: Record<string, any>) => {
 
 
 export default pushToAPI;
+
+
+// distance in miles after zipcode 
