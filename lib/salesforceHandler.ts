@@ -58,26 +58,28 @@ interface Center {
 //   return result.siteID;
 // }
 const checkNearestCenter = (nearestCenter: Center): boolean => {
-  if (nearestCenter.centerType === "franchise")
+  if (nearestCenter.centerType === "Franchise" || nearestCenter.centerType === "franchise")
     return true;
   return false;
 }
 
 const getNearestCenter = async ({ zipCode }: { zipCode: any }): Promise<string> => {
   try {
-    const response = await fetch((BASE + `v1/centers/zip/${zipCode}?cache=true`));
+    const response = await fetch((BASE + `v1/centers/zip/${zipCode}?cache=true/200`));
     const result = await response.json();
-
+    let nearest = ""
 
     if (result.data.length < 0)
       throw new Error("No center found");
     else {
-      result.data.map((center: Center) => {
-        if (checkNearestCenter(center))
-          return center.siteID;
-      })
+      for (let i = 0; i < result.data.length; i++) {
+        if (checkNearestCenter(result.data[i])) {
+          nearest = result.data[i].siteID;
+          break;
+        }
+      }
     }
-    return "";
+    return nearest;
   } catch (error) {
     console.log(error);
     throw error;
@@ -125,6 +127,7 @@ const pushToAPI = async (formData: Record<string, any>) => {
     const zipCode = formData.zipCode;
     // console.log(zipCode);
     const nearestCenter = await getNearestCenter({ zipCode });
+    console.log('nearestCenter', nearestCenter);
 
     // First get the prospect ID
     // const prospectId = await getProspectId();
