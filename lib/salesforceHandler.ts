@@ -65,7 +65,7 @@ const checkNearestCenter = (nearestCenter: Center): boolean => {
 
 const getNearestCenter = async ({ zipCode }: { zipCode: any }): Promise<string> => {
   try {
-    const response = await fetch((BASE + `v1/centers/zip/${zipCode}?cache=true/200`));
+    const response = await fetch((BASE + `v1/centers/zip/${zipCode}/200?cache=true`));
     const result = await response.json();
     let nearest = ""
 
