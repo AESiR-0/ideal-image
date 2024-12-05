@@ -70,7 +70,9 @@ const getNearestCenter = async ({ zipCode }: { zipCode: any }): Promise<string> 
     let nearest = ""
 
     if (result.data.length < 0)
-      throw new Error("No center found");
+      return '';
+    else if (result.data.length < 1)
+      return result.data[0].siteID;
     else {
       for (let i = 0; i < result.data.length; i++) {
         if (checkNearestCenter(result.data[i])) {
@@ -124,36 +126,61 @@ const generateLead = async (prospectId: string): Promise<string> => {
  */
 const pushToAPI = async (formData: Record<string, any>) => {
   try {
+    let flag = false;
     const zipCode = formData.zipCode;
     // console.log(zipCode);
     const nearestCenter = await getNearestCenter({ zipCode });
     console.log('nearestCenter', nearestCenter);
+    if (nearestCenter === '')
+      flag = false;
+    else
+      flag = true;
 
     // First get the prospect ID
     // const prospectId = await getProspectId();
     // const siteId = await getSiteId(formData.identifier);
-    const payload = {
-      // prospect_id: prospectId,
-      metas: [
-        { key: "firstName", value: formData.firstName, type: "explicit" },
-        { key: "lastName", value: formData.lastName, type: "explicit" },
-        { key: "flow", value: "paid-lhr", type: "implicit" },
-        { key: "email", value: formData.email, type: "explicit" },
-        {
-          key: "telephone",
-          value: `${formData.countryCode}${formData.phone}`,
-          type: "explicit",
-        },
-        { key: "serviceTypeCode", value: "127", type: "implicit" },
-        { key: "zipcode", value: formData.zipCode, type: "explicit" },
-        {
-          key: "siteId",
-          value: nearestCenter,
-          type: "explicit",
-        },
-        { key: "wantsContact", value: true, type: "explicit" },
-      ],
-    };
+    let payload = {}
+    if (flag) {
+      payload =
+      {
+        // prospect_id: prospectId,
+        metas: [
+          { key: "firstName", value: formData.firstName, type: "explicit" },
+          { key: "lastName", value: formData.lastName, type: "explicit" },
+          { key: "flow", value: "paid-lhr", type: "implicit" },
+          { key: "email", value: formData.email, type: "explicit" },
+          {
+            key: "telephone",
+            value: `${formData.countryCode}${formData.phone}`,
+            type: "explicit",
+          },
+          { key: "serviceTypeCode", value: "127", type: "implicit" },
+          { key: "zipcode", value: formData.zipCode, type: "explicit" },
+          {
+            key: "siteId",
+            value: nearestCenter,
+            type: "explicit",
+          },
+          { key: "wantsContact", value: true, type: "explicit" },
+        ],
+      };
+    } else
+      payload = {
+        metas: [
+          { key: "firstName", value: formData.firstName, type: "explicit" },
+          { key: "lastName", value: formData.lastName, type: "explicit" },
+          { key: "flow", value: "paid-lhr", type: "implicit" },
+          { key: "email", value: formData.email, type: "explicit" },
+          {
+            key: "telephone",
+            value: `${formData.countryCode}${formData.phone}`,
+            type: "explicit",
+          },
+          { key: "serviceTypeCode", value: "127", type: "implicit" },
+          { key: "zipcode", value: formData.zipCode, type: "explicit" },
+          { key: "wantsContact", value: true, type: "explicit" },
+        ],
+      }
     // console.log(prospectId);
 
     const response = await fetch((BASE + "v1/prospect"), {
