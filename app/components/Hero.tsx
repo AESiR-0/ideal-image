@@ -122,7 +122,7 @@ const HeroSection = () => {
       <div className="h-[30vh] max-md:h-screen max-md:bg-transparent bg-[#550640] flex max-md:flex-col items-center md:justify-between relative">
         {/* Full-width Black Friday Header */}
         <h3 className="absolute max-md:w-screen max-md:static top-0 left-0 w-full uppercase text-lg md:text-4xl font-extrabold tracking-wide text-white bg-[#fdb1ef] max-md:text-center text-left md:pl-[3rem] py-2">
-          Black Friday Starts <span className="text-[#f6f4f2]">Now!</span>
+          Cyber Week Starts <span className="text-[#f6f4f2]">Now!</span>
         </h3>
 
         {/* Left Side: Black Friday Text */}
