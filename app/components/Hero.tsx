@@ -88,7 +88,6 @@ const HeroSection = () => {
       const result = await response.json();
 
       if (response.ok) {
-        alert("Form submitted successfully!");
         setFormData({
           firstName: "",
           lastName: "",
