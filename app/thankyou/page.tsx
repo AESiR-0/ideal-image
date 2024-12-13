@@ -15,9 +15,9 @@ const ThankYouPage = () => {
         </p>
 
         <div className="bg-[#550640] text-white p-6 rounded-lg mb-6">
-          <h2 className="text-2xl font-semibold mb-2">Cyber Week Offer</h2>
+          <h2 className="text-2xl font-semibold mb-2">Holiday Special Offer</h2>
           <p className="text-lg">
-            Take advantage of our Cyber Week offer—
+            Take advantage of our Holiday special offer—
             <strong>additional $500 off</strong>—by scheduling your consultation
             today!
           </p>

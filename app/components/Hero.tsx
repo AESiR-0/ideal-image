@@ -117,14 +117,14 @@ const HeroSection = () => {
       {/* Row 1: Hero Image */}
       <div className="h-[60vh] max-md:h-[40vh] max-md:bg-left max-md:bg-cover static bg-cover bg-center bg-no-repeat bg-[url('/static/hero/girl_hero_section.jpg')]"></div>
 
-      {/* Row 2: Cyber Week Content */}
+      {/* Row 2: Tis the Season Content */}
       <div className="h-[30vh] max-md:h-screen max-md:bg-transparent bg-[#550640] flex max-md:flex-col items-center md:justify-between relative">
-        {/* Full-width Cyber Week Header */}
+        {/* Full-width Tis the Season Header */}
         <h3 className="absolute max-md:w-screen max-md:static top-0 left-0 w-full uppercase text-lg md:text-4xl font-extrabold tracking-wide text-white bg-[#fdb1ef] max-md:text-center text-left md:pl-[3rem] py-2">
-          Cyber Week Starts <span className="text-[#f6f4f2]">Now!</span>
+          'Tis the Season <span className="text-[#f6f4f2]">for Holiday specials</span>
         </h3>
 
-        {/* Left Side: Cyber Week Text */}
+        {/* Left Side: Tis the Season Text */}
         <div className="text-left flex flex-col md:pt-5 bg-[#550640] max-md:text-center md:px-10 w-full md:w-2/3">
           <h1 className="text-2xl md:text-5xl font-extrabold">
             Our Best Sale of the year
