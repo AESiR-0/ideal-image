@@ -19,10 +19,10 @@ export default function TreatmentList() {
 
                 {/* Content Section */}
                 <div className="text-center lg:text-left">
-                    <h2 className="text-2xl font-Begum lg:text-3xl font-bold mb-4 text-secondary">
+                    <h2 className="text-3xl font-Begum lg:text-4xl font-bold mb-4 text-secondary">
                         What can we treat with CoolSculpting® Elite?
                     </h2>
-                    <ul className="text-gray-600 list-none text-lg space-y-2">
+                    <ul className="text-gray-600 list-none text-xl pt-5 space-y-4">
                         {treatments.map((item, index) => (
                             <li key={index} className="flex list-none items-center gap-3">
                                 <span className="inline-block  list-none h-2.5 bg-primary rounded-full"></span>
@@ -32,12 +32,13 @@ export default function TreatmentList() {
                     </ul>
                 </div>
                 {/* Image Section */}
-                <div className="relative w-full h-64 lg:h-auto">
+                <div className="relative w-full  ">
                     <Image
-                        src={CoolSculptingImage.src}
+                        src={CoolSculptingImage}
                         alt="CoolSculpting Elite"
-                        className="rounded-lg object-cover"
-                        fill
+                        className="rounded-lg "
+                        height={512}
+                        width={512}
                         priority
                     />
                 </div>

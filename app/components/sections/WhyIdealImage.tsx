@@ -6,8 +6,8 @@ import w2 from '@/public/static/coolscultping/why/2.png'
 
 const WhyIdealImage: React.FC = () => {
     return (
-        <>
-            <div className="bg-secondary flex items-center text-3xl justify-center w-full h-20 text-center">
+        <div className='mb-20'>
+            <div className="bg-secondary  flex items-center text-3xl justify-center w-full h-20 text-center">
                 <h1 className=' text-white'>Ideal Image is the <span className='italic'>  Largest National Provider </span> of CoolSculpting® Elite
 
                 </h1>
@@ -42,7 +42,7 @@ const WhyIdealImage: React.FC = () => {
                 </div>
 
 
-            </div></>
+            </div></div>
     );
 };
 

@@ -44,25 +44,25 @@ const contentJson = [
 
 const AccordionSet = ({ title, content }: AccordionItemProps) => {
   return (
-    <div className="border-b border-gray-300 w-full my-5">
+    <div className="border-b  border-gray-300 w-full my-5">
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
-          <AccordionTrigger>{title}</AccordionTrigger>
-          <AccordionContent>{content}</AccordionContent>
+          <AccordionTrigger className="text-xl">{title}</AccordionTrigger>
+          <AccordionContent className="text-lg">{content}</AccordionContent>
         </AccordionItem>
       </Accordion>
     </div>
   );
 };
 
-const AccordionMain: React.FC = () => {
+const AccordionMain = ({ page }: { page: string }) => {
   return (
-    <section className="container h-full max-md:min-h-full min-h-screen max-md:py-10 py-20 max-md:flex-col items-center flex gap-10 justify-center">
-      <div className="w-[55%] max-md:w-full max-md:px-10  flex flex-col justify-center items-start ">
-        <h2 className="text-6xl font-bold max-md:text-3xl max-md:text-center font-Begum mb-4 ">
+    <section className="container h-full max-md:min-h-full min-h-screen max-md:py-10 py-20 flex flex-col items-center justify-center">
+      <div className="w-full text-[#515b7e] flex flex-col justify-center items-center">
+        <h2 className="text-6xl font-bold max-md:text-3xl font-Begum mb-4 ">
           Common Questions, Answered
         </h2>
-        <div className="border-t w-full border-gray-300">
+        <div className={`"border-t ${page !== "coolsculpting" ? 'w-full' : "w-2/3"}   border-gray-300"`}>
           {contentJson.map((item, index) => {
             return (
               <AccordionSet
@@ -74,9 +74,11 @@ const AccordionMain: React.FC = () => {
           })}
         </div>
       </div>
-      <div className="w-1/3 max-md:hidden h-full ">
-        <Image alt="Image " src={FAQImage} objectFit="cover" />
-      </div>
+      {page !== "coolsculpting" && (
+        <div className="w-1/3 max-md:hidden h-full mt-10">
+          <Image alt="Image " src={FAQImage} objectFit="cover" />
+        </div>
+      )}
     </section>
   );
 };

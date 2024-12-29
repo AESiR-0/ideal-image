@@ -6,17 +6,25 @@ import WhyIdealImage from '@/app/components/sections/WhyIdealImage';
 import HowItWorks from '@/app/components/sections/HowItWorks';
 import Comparison from '@/app/components/sections/Comparison';
 import WhatToExpect from '@/app/components/sections/WhatToExpect';
+import HomeForm from '../components/sections/HomeForm';
+import BeforeAfterSlider from '../components/BeforeAfterSlider';
+import Footer from '../components/Footer';
+import FAQs from '../components/FAQs';
 
 const CoolSculpting: React.FC = () => {
     return (
         <div className='font-Halenoir'>
+            <HomeForm />
             <Hero />
             <TreatmentList />
-            <WhyIdealImage />
             <Benefits />
+            <WhyIdealImage />
             <HowItWorks />
+            <BeforeAfterSlider />
             <Comparison />
             <WhatToExpect />
+            <FAQs page={"coolsculpting"} />
+            <Footer />
         </div>
     );
 };
