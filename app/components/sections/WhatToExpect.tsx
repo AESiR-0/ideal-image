@@ -59,7 +59,7 @@ const WhatToExpect: React.FC = () => {
                     <a
                         href="#home"
                         className="inline-block px-8 py-3 text-lg font-semibold text-[#3f4e6e] rounded-lg underline hover:scale-95 underline-offset-2 transition"
-                    >View all experiences
+                    >Claim upto 85% off
                     </a>
                 </div>
             </div>

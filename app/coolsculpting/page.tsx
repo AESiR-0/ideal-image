@@ -13,7 +13,7 @@ import FAQs from '../components/FAQs';
 
 const CoolSculpting: React.FC = () => {
     return (
-        <div className='font-Halenoir'>
+        <div className='font-Halenoir text-[#424e6d]'>
             <HomeForm />
             <Hero />
             <TreatmentList />

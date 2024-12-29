@@ -29,23 +29,24 @@ import cool_7b from "@/public/static/coolscultping/before after/7B.png"
 const BeforeAfterSlider = ({ page }: { page: string }) => {
   // Define images based on the page prop
   const images = page === "coolsculpting" ? [
-    { before: cool_1a, after: cool_1b },
-    { before: cool_2a, after: cool_2b },
-    { before: cool_3a, after: cool_3b },
-    { before: cool_4a, after: cool_4b },
-    { before: cool_5a, after: cool_5b },
-    { before: cool_6a, after: cool_6b },
-    { before: cool_7a, after: cool_7b }
+    { before: cool_1a, after: cool_1b, text: '(4 months • 2 cycles)' },
+    { before: cool_2a, after: cool_2b, text: '(3 months • 3 cycles)' },
+    { before: cool_3a, after: cool_3b, text: '(2 months • 8 cycles)' },
+    { before: cool_4a, after: cool_4b, text: '(6 months • 3 cycles)' },
+    { before: cool_5a, after: cool_5b, text: '(3 months • 10 cycles)' },
+    { before: cool_6a, after: cool_6b, text: '(3 months • 8 cycles)' },
+    { before: cool_7a, after: cool_7b, text: '(3 months • 8 cycles)' }
   ] : [
-    { before: beforeImage_1, after: afterImage_1 },
-    { before: beforeImage_2, after: afterImage_2 },
+    { before: beforeImage_1, after: afterImage_1, text: '' },
+    { before: beforeImage_2, after: afterImage_2, text: '' },
   ];
 
   return (
     <div className="bg-white max-md:py-0  py-16 relative">
       {/* Section Title */}
-      <h2 className="text-center text-3xl font-Begum font-bold text-gray-800 mb-8">
-        Real People. Real Results.
+      <h2 className="text-center text-3xl font-Begum font-bold text-[#424e6d] mb-8">
+        CoolSculpting® Elite <br />
+        Before and After
       </h2>
 
       {/* Swiper Slider */}
@@ -59,7 +60,7 @@ const BeforeAfterSlider = ({ page }: { page: string }) => {
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <div className="flex flex-col max-md:px-10 md:flex-row justify-center items-center gap-8">
+            <div className="flex flex-col  max-md:px-10 md:flex-row justify-center items-center gap-8">
               {/* Before Image */}
               <div className="relative">
                 <Image
@@ -69,8 +70,11 @@ const BeforeAfterSlider = ({ page }: { page: string }) => {
                   width={500}
                   height={300}
                 />
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-gray-600 text-white text-lg px-4 py-1 rounded-full">
+                <div className="absolute bottom-3  left-1/2 -translate-x-1/2 bg-[#4e5b7f] text-white text-lg px-4 py-1 rounded-full">
                   BEFORE
+                </div>
+                <div className="text-[#424e6d] text-center pt-10">
+                  
                 </div>
               </div>
               {/* After Image */}
@@ -82,19 +86,27 @@ const BeforeAfterSlider = ({ page }: { page: string }) => {
                   width={500}
                   height={300}
                 />
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-gray-600 text-white text-lg px-4 py-1 rounded-full">
+                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-[#4e5b7f] text-white text-lg px-4 py-1 rounded-full">
+
                   AFTER
+
+                </div>
+                <div className="text-[#424e6d] text-center pt-5">
+                  {image.text}
                 </div>
               </div>
+
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
       {/* Footer Text */}
-      <p className="text-center text-gray-500 text-sm ">Results may vary.</p>
-      <p className="text-center pt-10 text-gray-500 text-xl ">Photos: Allergan</p>
-      
+      {page != "coolsculpting" ? (<p className="text-center text-gray-500 text-sm ">Results may vary.</p>
+      ) : (<>
+        <p className="text-center pt-10 text-gray-500 text-xl ">Photos: Allergan</p></>)}
+
+
     </div>
   );
 };
