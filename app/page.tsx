@@ -29,7 +29,7 @@ export default function Home() {
       <Sections />
       <TestimonialsCarousel />
       <ClosingCTA />
-      <FAQs />
+      <FAQs page="home" />
       <Footer />
     </div>
   );

@@ -113,7 +113,7 @@ const HeroSection = () => {
     };
 
     return (
-        <div className="relative h-full text-white font-sans">
+        <div id="#home" className="relative h-full text-[#515b7e] font-sans">
             {/* Row 1: Hero Image */}
             <div className="h-[60vh] max-md:h-[40vh] max-md:bg-left max-md:bg-cover static bg-cover bg-center bg-no-repeat bg-[url('/static/hero/girl_hero_section.jpg')]"></div>
 
