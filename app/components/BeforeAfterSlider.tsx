@@ -11,8 +11,36 @@ import beforeImage_1 from "@/public/static/slider/1_before.jpg";
 import afterImage_1 from "@/public/static/slider/1_after.jpg";
 import beforeImage_2 from "@/public/static/slider/2_before.jpg";
 import afterImage_2 from "@/public/static/slider/2_after.jpg";
+import cool_1a from "@/public/static/coolscultping/before after/1A.png"
+import cool_1b from "@/public/static/coolscultping/before after/1B.png"
+import cool_2a from "@/public/static/coolscultping/before after/2A.png"
+import cool_2b from "@/public/static/coolscultping/before after/2B.png"
+import cool_3a from "@/public/static/coolscultping/before after/3A.png"
+import cool_3b from "@/public/static/coolscultping/before after/3B.png"
+import cool_4a from "@/public/static/coolscultping/before after/4A.png"
+import cool_4b from "@/public/static/coolscultping/before after/4B.png"
+import cool_5a from "@/public/static/coolscultping/before after/5A.png"
+import cool_5b from "@/public/static/coolscultping/before after/5B.png"
+import cool_6a from "@/public/static/coolscultping/before after/6A.png"
+import cool_6b from "@/public/static/coolscultping/before after/6B.png"
+import cool_7a from "@/public/static/coolscultping/before after/7A.png"
+import cool_7b from "@/public/static/coolscultping/before after/7B.png"
 
-const BeforeAfterSlider = () => {
+const BeforeAfterSlider = ({ page }: { page: string }) => {
+  // Define images based on the page prop
+  const images = page === "coolsculpting" ? [
+    { before: cool_1a, after: cool_1b },
+    { before: cool_2a, after: cool_2b },
+    { before: cool_3a, after: cool_3b },
+    { before: cool_4a, after: cool_4b },
+    { before: cool_5a, after: cool_5b },
+    { before: cool_6a, after: cool_6b },
+    { before: cool_7a, after: cool_7b }
+  ] : [
+    { before: beforeImage_1, after: afterImage_1 },
+    { before: beforeImage_2, after: afterImage_2 },
+  ];
+
   return (
     <div className="bg-white max-md:py-0  py-16 relative">
       {/* Section Title */}
@@ -29,71 +57,44 @@ const BeforeAfterSlider = () => {
         modules={[Navigation]}
         className="max-w-[90%]  before-after-slider"
       >
-        {/* Slide 1 */}
-        <SwiperSlide>
-          <div className="flex flex-col max-md:px-10 md:flex-row justify-center items-center gap-8">
-            {/* Before Image */}
-            <div className="relative ">
-              <Image
-                src={beforeImage_1}
-                alt="Before"
-                className="rounded-lg object-cover"
-                width={500}
-                height={300}
-              />
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-gray-600 text-white text-lg px-4 py-1 rounded-full">
-                BEFORE
+        {images.map((image, index) => (
+          <SwiperSlide key={index}>
+            <div className="flex flex-col max-md:px-10 md:flex-row justify-center items-center gap-8">
+              {/* Before Image */}
+              <div className="relative">
+                <Image
+                  src={image.before}
+                  alt="Before"
+                  className="rounded-lg object-cover"
+                  width={500}
+                  height={300}
+                />
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-gray-600 text-white text-lg px-4 py-1 rounded-full">
+                  BEFORE
+                </div>
+              </div>
+              {/* After Image */}
+              <div className="relative">
+                <Image
+                  src={image.after}
+                  alt="After"
+                  className="rounded-lg object-cover"
+                  width={500}
+                  height={300}
+                />
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-gray-600 text-white text-lg px-4 py-1 rounded-full">
+                  AFTER
+                </div>
               </div>
             </div>
-            {/* After Image */}
-            <div className="relative">
-              <Image
-                src={afterImage_1}
-                alt="After"
-                className="rounded-lg object-cover"
-                width={500}
-                height={300}
-              />
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-gray-600 text-white text-lg px-4 py-1 rounded-full">
-                AFTER
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex flex-col max-md:px-10  md:flex-row justify-center items-center gap-8">
-            {/* Before Image */}
-            <div className="relative">
-              <Image
-                src={beforeImage_2}
-                alt="Before"
-                className="rounded-lg object-cover"
-                width={500}
-                height={300}
-              />
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-gray-600 text-white text-lg px-4 py-1 rounded-full">
-                BEFORE
-              </div>
-            </div>
-            {/* After Image */}
-            <div className="relative">
-              <Image
-                src={afterImage_2}
-                alt="After"
-                className="rounded-lg object-cover"
-                width={500}
-                height={300}
-              />
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-gray-600 text-white text-lg px-4 py-1 rounded-full">
-                AFTER
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
+          </SwiperSlide>
+        ))}
       </Swiper>
 
       {/* Footer Text */}
       <p className="text-center text-gray-500 text-sm ">Results may vary.</p>
+      <p className="text-center pt-10 text-gray-500 text-xl ">Photos: Allergan</p>
+      
     </div>
   );
 };

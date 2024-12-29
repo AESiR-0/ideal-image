@@ -20,7 +20,7 @@ const CoolSculpting: React.FC = () => {
             <Benefits />
             <WhyIdealImage />
             <HowItWorks />
-            <BeforeAfterSlider />
+            <BeforeAfterSlider page={"coolsculpting"} />
             <Comparison />
             <WhatToExpect />
             <FAQs page={"coolsculpting"} />

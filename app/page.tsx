@@ -25,7 +25,7 @@ export default function Home() {
       <HeroSection />
       <Features />
       <WhyChooseUs />
-      <BeforeAfterSlider />
+      <BeforeAfterSlider page="hair" />
       <Sections />
       <TestimonialsCarousel />
       <ClosingCTA />
