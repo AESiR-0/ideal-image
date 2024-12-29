@@ -103,7 +103,7 @@ const HeroSection = () => {
                     utmTerm: "",
                     pageURL: "",
                 });
-                router.push("/thankyou");
+                router.push("/coolsculpting/thankyou");
             } else {
                 setError(result?.message || "Something went wrong!");
             }
