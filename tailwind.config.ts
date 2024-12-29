@@ -12,6 +12,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        secondary : '#4e5b7f',
+        primary: "#f6f4f2"
       },
       fontFamily: {
         Halenoir: ["var(--font-halenoir)"],
