@@ -33,7 +33,7 @@ const AccordionMain = ({ page }: { page: string }) => {
     {
       title: "What does Laser Hair Removal feel like??",
       content:
-        "Many people describe the feeling like a rubber band snapping against the skin. But keep in mind that everyone’s pain tolerance is different. Compared to waxing and other forms of hair removal, it's not so bad. If you do find it uncomfortable, our healthcare professionals can prescribe a numbing cream for the skin.",
+        "Many people describe the feeling like a rubber band snapping against the skin. But keep in mind that everyone's pain tolerance is different. Compared to waxing and other forms of hair removal, it's not so bad. If you do find it uncomfortable, our healthcare professionals can prescribe a numbing cream for the skin.",
     },
     {
       title: "What is the difference between IPL and a laser?",
@@ -41,7 +41,7 @@ const AccordionMain = ({ page }: { page: string }) => {
         "IPL stands for “intense pulsed light” and it's not a laser. While IPLs can be effective for some cosmetic procedures, our experience supports the more powerful, yet safer and faster use of the laser for a more permanent solution to hair removal.",
     },
     {
-      title: "How can I be sure the hair won’t grow back?",
+      title: "How can I be sure the hair won't grow back?",
       content:
         "Ideal Image provides all of our clients with a Lifetime Guarantee  for all areas purchased, meaning you can come back in for a touch-up any time hair returns.",
     },
@@ -64,20 +64,20 @@ const AccordionMain = ({ page }: { page: string }) => {
         content: "As the cooling begins during the first few minutes, you will feel minimal discomfort, slight pressure, and intense cold. This soon dissipates. During treatment, many people read, watch videos, work on their laptops, or even take a nap."
       }, {
         title: "How much of a decrease in fat cells does CoolSculpting® Elite provide?",
-        content: "With each session you are able to decrease the number of treated fat cells by about 20%. Each additional treatment further enhances your results, ridding you of an additional 20% of the treated fat cells per session. With CoolSculpting® Elite at Ideal Image, it’s easy to sit back, relax and reduce that stubborn fat."
+        content: "With each session you are able to decrease the number of treated fat cells by about 20%. Each additional treatment further enhances your results, ridding you of an additional 20% of the treated fat cells per session. With CoolSculpting® Elite at Ideal Image, it's easy to sit back, relax and reduce that stubborn fat."
       }, {
         title: "How much does CoolSculpting® cost?",
-        content: "When it comes to CoolSculpting® Elite, no two bodies are the same. Though CoolSculpting® Elite is non-invasive and relatively painless, it’s still considered a medical procedure and may require a series of treatments to achieve the results you’re after. As such, prices for CoolSculpting® Elite can vary on your current height and weight, the size of your treatment area, and how much fat you’re aiming to eliminate."
+        content: "When it comes to CoolSculpting® Elite, no two bodies are the same. Though CoolSculpting® Elite is non-invasive and relatively painless, it's still considered a medical procedure and may require a series of treatments to achieve the results you're after. As such, prices for CoolSculpting® Elite can vary on your current height and weight, the size of your treatment area, and how much fat you're aiming to eliminate."
       },
       {
         title: "What does CoolSculpting Elite feel like?",
         content: "As the cooling begins during the first few minutes, you will feel minimal discomfort, slight pressure, and intense cold. This soon dissipates. During treatment, many people read, watch videos, work on their laptops, or even take a nap."
       }, {
         title: "How much of a decrease in fat cells does CoolSculpting® Elite provide?",
-        content: "With each session you are able to decrease the number of treated fat cells by about 20%. Each additional treatment further enhances your results, ridding you of an additional 20% of the treated fat cells per session. With CoolSculpting® Elite at Ideal Image, it’s easy to sit back, relax and reduce that stubborn fat."
+        content: "With each session you are able to decrease the number of treated fat cells by about 20%. Each additional treatment further enhances your results, ridding you of an additional 20% of the treated fat cells per session. With CoolSculpting® Elite at Ideal Image, it's easy to sit back, relax and reduce that stubborn fat."
       }, {
         title: "How much does CoolSculpting® cost?",
-        content: "When it comes to CoolSculpting® Elite, no two bodies are the same. Though CoolSculpting® Elite is non-invasive and relatively painless, it’s still considered a medical procedure and may require a series of treatments to achieve the results you’re after. As such, prices for CoolSculpting® Elite can vary on your current height and weight, the size of your treatment area, and how much fat you’re aiming to eliminate."
+        content: "When it comes to CoolSculpting® Elite, no two bodies are the same. Though CoolSculpting® Elite is non-invasive and relatively painless, it's still considered a medical procedure and may require a series of treatments to achieve the results you're after. As such, prices for CoolSculpting® Elite can vary on your current height and weight, the size of your treatment area, and how much fat you're aiming to eliminate."
       },
     ];
 

@@ -7,17 +7,14 @@ import w2 from '@/public/static/coolscultping/why/2.png'
 const WhyIdealImage: React.FC = () => {
     return (
         <div className='mb-20'>
-            <div className="bg-secondary  flex items-center text-3xl justify-center w-full h-20 text-center">
-                <h1 className=' text-white'>Ideal Image is the <span className='italic'>  Largest National Provider </span> of CoolSculpting® Elite
-
-                </h1>
+            <div className="bg-secondary flex items-center text-3xl justify-center w-full h-20 text-center">
+                <h1 className='text-white'>Ideal Image is the <span className='italic'>Largest National Provider</span> of CoolSculpting® Elite</h1>
             </div>
-            <div className="  flex flex-col md:flex-row items-center">
-
-                <div className="md:w-1/2 flex justify-end pr-10 ">
-                    <Image height={600} width={600} src={why} alt="CoolSculpting Treatment" className=" shadow-lg" />
+            <div className="flex flex-col md:flex-row items-center">
+                <div className="flex justify-center md:justify-end md:w-1/2 pr-10">
+                    <Image height={600} width={600} src={why} alt="CoolSculpting Treatment" className="shadow-lg" />
                 </div>
-                <div className="md:w-1/3 mb-8 md:mb-0 ">
+                <div className="md:w-1/3 mb-8 md:mb-0">
                     <h2 className="text-4xl font-Begum md:text-4xl font-extrabold text-[#515b7e] mb-6">
                         Why Ideal Image for CoolSculpting® Elite?
                     </h2>
@@ -40,9 +37,8 @@ const WhyIdealImage: React.FC = () => {
                         </p>
                     </div>
                 </div>
-
-
-            </div></div>
+            </div>
+        </div>
     );
 };
 
