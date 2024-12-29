@@ -2,6 +2,8 @@
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
+import Image from "next/image";
+import off from '@/public/static/coolscultping/hero_girl.webp'
 
 const uniqueId = uuidv4();
 
@@ -113,29 +115,35 @@ const HeroSection = () => {
     };
 
     return (
-        <div id="#home" className="relative h-full text-[#515b7e] font-sans">
+        <div id="#home" className="relative h-[75vh]  bg-[url('/static/coolscultping/hero.avif')]  text-white font-sans">
             {/* Row 1: Hero Image */}
-            <div className="h-[60vh] max-md:h-[40vh] max-md:bg-left max-md:bg-cover static bg-cover bg-center bg-no-repeat bg-[url('/static/hero/girl_hero_section.jpg')]"></div>
+
 
             {/* Row 2: Tis the Season Content */}
-            <div className="h-[30vh] max-md:h-screen max-md:bg-transparent bg-[#550640] flex max-md:flex-col items-center md:justify-between relative">
-                {/* Full-width Tis the Season Header */}
-                <h3 className="absolute max-md:w-screen max-md:static top-0 left-0 w-full uppercase text-lg md:text-4xl font-extrabold tracking-wide text-white bg-[#fdb1ef] max-md:text-center text-left md:pl-[3rem] py-2">
-                    'Tis the Holiday <span className="text-[#f6f4f2]">Season</span>
-                </h3>
+            <div className="flex items-center ">
+                <div className="h-[70vh] max-md:h-screen max-md:bg-transparent  flex flex-col  md:justify-center py-20 relative">
+                    {/* Full-width Tis the Season Header */}
+                    <h3 className="max-md:w-screen max-md:static top-0 left-0 w-full uppercase text-lg md:text-4xl  tracking-wide  max-md:text-center text-left md:pl-[3rem] py-5">
+                        'Tis the Holiday <span className="">Season</span>
+                    </h3>
 
-                {/* Left Side: Tis the Season Text */}
-                <div className="text-left flex flex-col md:pt-5 bg-[#550640] max-md:text-center md:px-10 w-full md:w-2/3">
-                    <h1 className="text-2xl md:text-5xl font-extrabold">
-                        Our Best Sale of the year
-                    </h1>
-                    <h2 className="my-2 text-[#f6f4f2] text-xl md:text-3xl font-extrabold">
-                        Up to 85% Off on <span>CoolSculpting®</span>
-                    </h2>
+                    {/* Left Side: Tis the Season Text */}
+                    <div className="text-left flex flex-col  max-md:text-center md:px-10 w-full md:w-[75%]">
+                        <h1 className="text-2xl md:text-5xl font-extrabold">
+                            CoolSculpting® Elite
+                        </h1>
+                        <h2 className="my-2  text-lg md:text-2xl font-extrabold">
+                            Feel confident in the clothes you love.
+
+                        </h2>
+                    </div>
+
                 </div>
-
+                <div className="">
+                    <Image src={off} height={512} width={512} alt="" />
+                </div>
                 {/* Right Side: Form */}
-                <div className="absolute max-md:static max-md:text-center md:right-[5%] md:transform md:-translate-y-1/2 bg-slate-100 md:py-10 p-12 rounded-lg text-slate-800 shadow-lg max-md:w-full md:w-[500px] lg:w-[600px] z-10">
+                <div className="absolute  max-md:static max-md:text-center md:right-[5%] bg-slate-100  p-8 rounded-lg text-slate-800 shadow-lg max-md:w-full md:w-[500px] lg:w-[600px] z-10">
                     <h2 className="text-center text-3xl md:text-2xl font-bold mb-6">
                         Unlock Your Savings
                     </h2>
@@ -226,7 +234,7 @@ const HeroSection = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
