@@ -6,7 +6,7 @@ import WhyIdealImage from '@/app/components/sections/WhyIdealImage';
 import HowItWorks from '@/app/components/sections/HowItWorks';
 import Comparison from '@/app/components/sections/Comparison';
 import WhatToExpect from '@/app/components/sections/WhatToExpect';
-import HomeForm from '../components/sections/HomeForm';
+import HomeForm from '@/app/components/sections/HomeForm';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import Footer from '../components/Footer';
 import FAQs from '../components/FAQs';

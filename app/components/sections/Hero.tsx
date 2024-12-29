@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero: React.FC = () => {
     return (
-        <div className="bg-[#f6f4f2] text-secondary p-8 md:p-16 relative">
+        <div className="bg-[#f6f4f2] text-secondary p-8 md:p-16 relative mt-[6vh] md:mt-[2vh] lg:mt-2">
             {/* Background Image (optional) */}
             <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: 'url(/path-to-your-image.jpg)' }}></div>
 
