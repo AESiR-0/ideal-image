@@ -57,10 +57,11 @@ const AccordionSet = ({ title, content }: AccordionItemProps) => {
 
 const AccordionMain = ({ page }: { page: string }) => {
   return (
-    <section className="container h-full max-md:min-h-full min-h-screen max-md:py-10 py-20 flex flex-col items-center justify-center">
+    <section className="container text-4xl h-full max-md:min-h-full min-h-screen max-md:py-10 py-20 flex flex-col items-center justify-center">
       <div className="w-full text-[#515b7e] flex flex-col justify-center items-center">
-        <h2 className="text-6xl font-bold max-md:text-3xl font-Begum mb-4 ">
-          Common Questions, Answered
+        <h2 className={`font-bold  font-Begum mb-4 ${page !== 'coolsculpting' ? 'text-6xl' : 'text-2xl'}} max-md:text-3xl`}>
+          {page !== "coolsculpting" ? "Common Questions, Answered" :
+            "Coolsculpting® Elite Frequently Asked Questions"}
         </h2>
         <div className={`"border-t ${page !== "coolsculpting" ? 'w-full' : "w-2/3"}   border-gray-300"`}>
           {contentJson.map((item, index) => {
