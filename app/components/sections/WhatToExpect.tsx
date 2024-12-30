@@ -3,7 +3,7 @@ import React from 'react';
 
 const WhatToExpect: React.FC = () => {
     return (
-        <section className="bg-gray-50 py-12 px-6 md:px-16">
+        <section className="bg-gray-50  px-6 md:px-16">
             <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-12">
@@ -17,7 +17,7 @@ const WhatToExpect: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Step 1 */}
                     <div className="bg-white shadow-lg rounded-lg ">
-                        <div className="p-6">
+                        <div className="p-6 ">
                             <h3 className="text-3xl text-center font-bold text-[#3f4e6e] mb-4 font-Begum">Before Treatment</h3>
                             <ul className="text-center text-lg text-[#3f4e6e] space-y-10">
                                 <li>Maintain a healthy diet and exercise plan.</li>
@@ -25,12 +25,12 @@ const WhatToExpect: React.FC = () => {
                                 <li>We'll weigh you and take photos before starting treatment.</li>
                             </ul>
                         </div>
-                        <div className="bg-[#abc1c4] h-5 w-full" ></div>
+                        <div className="bg-[#abc1c4]   h-5 w-full" ></div>
                     </div>
 
                     {/* Step 2 */}
                     <div className="bg-white text-center shadow-lg rounded-lg ">
-                        <div className="p-6">
+                        <div className="p-6 md:mb-7 max-md:mb-0">
                             <h3 className="text-3xl font-bold  text-[#3f4e6e] mb-4 font-Begum">During Treatment</h3>
                             <ul className="text-center text-lg text-[#3f4e6e] space-y-10">
                                 <li>Sessions can take as little as 35 minutes.</li>
@@ -59,7 +59,7 @@ const WhatToExpect: React.FC = () => {
                 <div className="text-center mt-12">
                     <Link
                         href="#home"
-                        className="inline-block px-8 py-3 bg-[#3f4e6e] text-lg font-semibold text-[#f6f4f2] hover:bg-[#f6f4f2] 
+                        className="inline-block px-8 py-3 bg-[#3f4e6e] text-lg font-semibold text-[#f6f4f2] hover:bg-white 
                         hover:text-[#3f4e6e] rounded-lg hover:scale-95 duration-300 underline-offset-2 transition"
                     >Claim upto 85% off
                     </Link>
