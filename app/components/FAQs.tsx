@@ -70,14 +70,24 @@ const AccordionMain = ({ page }: { page: string }) => {
         content: "When it comes to CoolSculpting® Elite, no two bodies are the same. Though CoolSculpting® Elite is non-invasive and relatively painless, it's still considered a medical procedure and may require a series of treatments to achieve the results you're after. As such, prices for CoolSculpting® Elite can vary on your current height and weight, the size of your treatment area, and how much fat you're aiming to eliminate."
       },
       {
-        title: "What does CoolSculpting Elite feel like?",
-        content: "As the cooling begins during the first few minutes, you will feel minimal discomfort, slight pressure, and intense cold. This soon dissipates. During treatment, many people read, watch videos, work on their laptops, or even take a nap."
+        title: "When will I see CoolSculpting® Elite results?",
+        content: "You may start to see changes as quickly as four weeks after your treatment and will experience the most dramatic results after two months, but your body continues flushing out fat cells for up to six months after treatment."
       }, {
-        title: "How much of a decrease in fat cells does CoolSculpting® Elite provide?",
-        content: "With each session you are able to decrease the number of treated fat cells by about 20%. Each additional treatment further enhances your results, ridding you of an additional 20% of the treated fat cells per session. With CoolSculpting® Elite at Ideal Image, it's easy to sit back, relax and reduce that stubborn fat."
+        title: "How many treatments are necessary?",
+        content: "Many see results after just one treatment, but others may need a few treatments to reach their specific goals. A trained member of our staff will work with you to customize an appropriate plan during your initial consultation, in which we will work together to determine treatment areas and the number of sessions needed."
       }, {
-        title: "How much does CoolSculpting® cost?",
-        content: "When it comes to CoolSculpting® Elite, no two bodies are the same. Though CoolSculpting® Elite is non-invasive and relatively painless, it's still considered a medical procedure and may require a series of treatments to achieve the results you're after. As such, prices for CoolSculpting® Elite can vary on your current height and weight, the size of your treatment area, and how much fat you're aiming to eliminate."
+        title: "What are the risks of the procedure?",
+        content: "Side effects are minor and rare, and can include (but are not limited to) temporary discomfort or numbness in the treated areas following the session."
+      }, {
+        title: "What happens to the frozen fat cells?",
+        content: "After the fat cells are targeted and frozen, your body naturally and gradually sheds them. They become processed and eliminated on their own over the course of six months. Unlike with diet and exercise, fat cells actually die and are permanently gone from your body with the CoolSculpting® procedure. You'll literally freeze them away and be left with a toned, firm body.."
+      },
+      {
+        title: "What happens to the frozen fat cells?",
+        content: "After the fat cells are targeted and frozen, your body naturally and gradually sheds them. They become processed and eliminated on their own over the course of six months. Unlike with diet and exercise, fat cells actually die and are permanently gone from your body with the CoolSculpting® procedure. You'll literally freeze them away and be left with a toned, firm body.."
+      },{
+        title: "What areas do you treat?",
+        content: "The most common areas are abdomen, sides, back, legs, arms, chin and what we call the “banana roll,” which is a roll under the buttocks. However, if you have concerns in a different area, we recommend coming in for a consultation to find out how we can help!"
       },
     ];
 
