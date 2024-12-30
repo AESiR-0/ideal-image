@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const WhatToExpect: React.FC = () => {
@@ -56,11 +57,12 @@ const WhatToExpect: React.FC = () => {
 
                 {/* Call-to-Action */}
                 <div className="text-center mt-12">
-                    <a
+                    <Link
                         href="#home"
-                        className="inline-block px-8 py-3 text-lg font-semibold text-[#3f4e6e] rounded-lg underline hover:scale-95 underline-offset-2 transition"
+                        className="inline-block px-8 py-3 bg-[#3f4e6e] text-lg font-semibold text-[#f6f4f2] hover:bg-[#f6f4f2] 
+                        hover:text-[#3f4e6e] rounded-lg hover:scale-95 duration-300 underline-offset-2 transition"
                     >Claim upto 85% off
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

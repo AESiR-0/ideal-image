@@ -6,16 +6,16 @@ import w2 from '@/public/static/coolscultping/why/2.png'
 
 const WhyIdealImage: React.FC = () => {
     return (
-        <div className='mb-20'>
-            <div className="bg-secondary flex items-center text-3xl justify-center w-full h-20 text-center">
+        <div className=''>
+            <div className="bg-secondary flex max-md:py-10 items-center max-md:text-2xl max-md:px-5 text-3xl justify-center w-full h-28 text-center">
                 <h1 className='text-white'>Ideal Image is the <span className='italic'>Largest National Provider</span> of CoolSculpting® Elite</h1>
             </div>
-            <div className="flex flex-col md:flex-row items-center">
+            <div className="flex flex-col md:flex-row items-center max-md:px-5">
                 <div className="flex justify-center md:justify-end md:w-1/2 pr-10">
                     <Image height={600} width={600} src={why} alt="CoolSculpting Treatment" className="shadow-lg" />
                 </div>
                 <div className="md:w-1/3 mb-8 md:mb-0">
-                    <h2 className="text-4xl font-Begum md:text-4xl font-extrabold text-[#515b7e] mb-6">
+                    <h2 className="text-4xl max-md:mt-5 font-Begum md:text-4xl font-extrabold text-[#515b7e] mb-6">
                         Why Ideal Image for CoolSculpting® Elite?
                     </h2>
                     <div className="flex items-center">

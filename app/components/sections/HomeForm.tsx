@@ -2,6 +2,8 @@
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
+import Image from "next/image";
+import hero from "@/public/static/coolscultping/hero_girl.webp"
 
 const uniqueId = uuidv4();
 
@@ -115,7 +117,9 @@ const HomeForm = () => {
     return (
         <div className="relative h-full font-sans">
             {/* Row 1: Hero Image */}
-            <div className="h-[60vh] max-md:h-[40vh] max-md:bg-left max-md:bg-cover static bg-cover bg-center bg-no-repeat bg-[url('/static/coolscultping/hero.avif')]"></div>
+            <div className="h-[60vh] max-md:h-[40vh] max-md:bg-left max-md:bg-cover static bg-cover bg-center bg-no-repeat bg-[url('/static/coolscultping/hero.avif')]">
+                <Image src={hero} height={512} width={512} alt="" />
+            </div>
 
             {/* Row 2: Tis the Season Content */}
             <div className="h-[30vh] max-md:h-screen max-md:bg-transparent bg-secondary flex max-md:flex-col items-center md:justify-between relative">

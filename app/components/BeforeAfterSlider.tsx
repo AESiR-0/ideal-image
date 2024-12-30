@@ -42,7 +42,7 @@ const BeforeAfterSlider = ({ page }: { page: string }) => {
   ];
 
   return (
-    <div className="bg-white max-md:py-0  py-16 relative">
+    <div className="bg-white max-md:py-10  py-16 relative">
       {/* Section Title */}
       <h2 className="text-center text-3xl font-Begum font-bold text-[#424e6d] mb-8">
         CoolSculpting® Elite <br />
