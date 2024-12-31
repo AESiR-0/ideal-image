@@ -129,6 +129,7 @@ const pushToAPI = async (formData: Record<string, any>) => {
     // console.log(zipCode);
     const nearestCenter = await getNearestCenter({ zipCode });
     console.log('nearestCenter', nearestCenter);
+    const serviceTypeCode = formData.pageURL.includes("https://www.idealimage-aesthetics.com/coolsculpting") ? "127" : "108";
     if (nearestCenter === '')
       flag = false;
     else
@@ -152,7 +153,7 @@ const pushToAPI = async (formData: Record<string, any>) => {
             value: `${formData.countryCode}${formData.phone}`,
             type: "explicit",
           },
-          { key: "serviceTypeCode", value: "108", type: "implicit" },
+          { key: "serviceTypeCode", value: serviceTypeCode, type: "implicit" },
           { key: "zipcode", value: formData.zipCode, type: "explicit" },
           {
             key: "siteId",

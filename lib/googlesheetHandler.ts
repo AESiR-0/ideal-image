@@ -39,11 +39,14 @@ export default async function postData(values: FormData) {
 
   const sheets = google.sheets({ version: "v4", auth });
   const spreadsheetId = "1jFcrxwNDIUm3A9TlIz2k01bY6WA9VouLZl9zUZiepcM";
-
+  
+  // Determine which sheet to use based on the URL
+  const sheetName = pageURL.includes("https://www.idealimage-aesthetics.com/coolsculpting") ? "Sheet2" : "Sheet1";
+  
   try {
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: "Sheet1", // Update the sheet name and range if necessary
+      range: sheetName, // Using the determined sheet name
       valueInputOption: "RAW",
       requestBody: {
         values: [
@@ -73,70 +76,3 @@ export default async function postData(values: FormData) {
     );
   }
 }
-// import { google } from "googleapis";
-
-// type FormData = {
-//   fullName: string;
-//   email: string;
-//   phoneNumber: string;
-//   experience: number;
-//   jobTitle: string | null;
-//   aboutExperience: string;
-//   cv: string;
-//   playlist: string;
-//   favComic: string;
-// };
-
-// export default async function postData(values: FormData) {
-//   const {
-//     fullName,
-//     email,
-//     phoneNumber,
-//     experience,
-//     jobTitle,
-//     playlist,
-//     cv,
-//     favComic,
-//     aboutExperience,
-//   } = values;
-
-//   // Auth setup
-//   const auth = new google.auth.GoogleAuth({
-//     credentials: {
-//       client_email: process.env.CLIENT_EMAIL,
-//       private_key: process.env.PRIVATE_KEY?.replace(/\\n/g, "\n"),
-//     },
-//     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-//   });
-
-//   const sheets = google.sheets({ version: "v4", auth });
-//   const spreadsheetId = "1jFcrxwNDIUm3A9TlIz2k01bY6WA9VouLZl9zUZiepcM";
-
-//   try {
-//     const response = await sheets.spreadsheets.values.append({
-//       spreadsheetId,
-//       range: "Sheet2!A1:Z1", // Update the sheet name and range if necessary
-//       valueInputOption: "RAW",
-//       requestBody: {
-//         values: [
-//           [
-//             fullName,
-//             email,
-//             phoneNumber,
-//             experience,
-//             jobTitle,
-//             aboutExperience,
-//             cv,
-//             favComic,
-//             playlist,
-//           ],
-//         ],
-//       },
-//     });
-//     console.log("Data successfully appended:", response.data);
-//     return "Data successfully added to Google Sheet";
-//   } catch (error) {
-//     console.error("Error appending data to Google Sheets:", error);
-//     throw error;
-//   }
-// }
