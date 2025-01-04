@@ -122,14 +122,14 @@ const HomeForm = () => {
             </div>
 
             {/* Row 2: Tis the Season Content */}
-            <div className="h-[30vh] max-md:h-screen max-md:bg-transparent bg-secondary flex max-md:flex-col items-center md:justify-between relative">
+            <div className="h-[30vh] max-md:h-screen max-md:bg-transparent bg-[#0A5346] flex max-md:flex-col items-center md:justify-between relative">
                 {/* Full-width Tis the Season Header */}
-                <h3 className="absolute max-md:w-screen max-md:static top-0 left-0 w-full uppercase text-lg md:text-4xl font-extrabold tracking-wide text-secondary bg-[#f6f4f2] max-md:text-center text-left md:pl-[3rem] py-2">
+                <h3 className="absolute max-md:w-screen max-md:static top-0 left-0 w-full uppercase text-lg md:text-4xl font-extrabold tracking-wide text-[#0A5346] bg-[#f6f4f2] max-md:text-center text-left md:pl-[3rem] py-2">
                     'Tis the Holiday <span className="">Season</span>
                 </h3>
 
                 {/* Left Side: Tis the Season Text */}
-                <div className="text-left flex flex-col md:pt-5 bg-secondary text-[#f6f4f2] max-md:text-center md:px-10 w-full md:w-2/3">
+                <div className="text-left flex flex-col md:pt-5 bg-[#0A5346] text-[#f6f4f2] max-md:text-center md:px-10 w-full md:w-2/3">
                     <h1 className="text-2xl md:text-5xl font-extrabold">
                         CoolSculpting® Elite
                     </h1>
@@ -213,7 +213,7 @@ const HomeForm = () => {
                         <button
                             type="submit"
                             disabled={isSubmitting}
-                            className="w-full bg-[#550640] text-white font-bold py-4 rounded-md hover:bg-[#550640a7] transition-all duration-300"
+                            className="w-full bg-[#0A5346] text-white font-bold py-4 rounded-md hover:bg-[#0a5346e6] transition-all duration-300"
                         >
                             {isSubmitting ? "Submitting..." : "Submit"}
                         </button>
@@ -456,7 +456,7 @@ export default HomeForm;
 //                         <button
 //                             type="submit"
 //                             disabled={isSubmitting}
-//                             className="w-full bg-[#550640] text-white font-bold py-4 rounded-md hover:bg-[#550640a7] transition-all duration-300"
+//                             className="w-full bg-[#0A5346] text-white font-bold py-4 rounded-md hover:bg-[#550640a7] transition-all duration-300"
 //                         >
 //                             {isSubmitting ? "Submitting..." : "Submit"}
 //                         </button>

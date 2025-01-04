@@ -70,11 +70,11 @@ const BeforeAfterSlider = ({ page }: { page: string }) => {
                   width={500}
                   height={300}
                 />
-                <div className="absolute bottom-3  left-1/2 -translate-x-1/2 bg-[#4e5b7f] text-white text-lg px-4 py-1 rounded-full">
+                <div className="absolute bottom-3  left-1/2 -translate-x-1/2 bg-[#0A5346] text-white text-lg px-4 py-1 rounded-full">
                   BEFORE
                 </div>
                 <div className="text-[#424e6d] text-center pt-10">
-                  
+
                 </div>
               </div>
               {/* After Image */}
@@ -86,7 +86,7 @@ const BeforeAfterSlider = ({ page }: { page: string }) => {
                   width={500}
                   height={300}
                 />
-                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-[#4e5b7f] text-white text-lg px-4 py-1 rounded-full">
+                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-[#0A5346] text-white text-lg px-4 py-1 rounded-full">
 
                   AFTER
 

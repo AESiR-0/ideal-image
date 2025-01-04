@@ -85,7 +85,7 @@ const SpecialOffer = () => {
       </p>
       <div className="mt-6">
         <Link href={"#form-section"}>
-          <h6 className="inline-block bg-[#550640] text-white py-3 px-8 rounded-full text-lg font-bold hover:bg-purple-800 transition">
+          <h6 className="inline-block bg-[#0A5346] text-white py-3 px-8 rounded-full text-lg font-bold hover:bg-purple-800 transition">
             {blackFridayOffer.buttonLabel}
           </h6>
         </Link>
@@ -110,7 +110,7 @@ const EasySteps = () => {
               key={index}
               className="bg-white p-6 shadow rounded-lg flex flex-col items-center text-center hover:shadow-lg transition"
             >
-              <div className="bg-[#550640] text-white h-16 w-16 flex items-center justify-center rounded-full mb-4">
+              <div className="bg-[#0A5346] text-white h-16 w-16 flex items-center justify-center rounded-full mb-4">
                 {step.icon}
               </div>
               <h3 className="text-lg font-bold text-[#550640] font-Begum">

@@ -1,7 +1,7 @@
 import Link from "next/link";
 const ClosingCTA = () => {
   return (
-    <div className="bg-[#550640] py-16 font-Begum text-center">
+    <div className="bg-[#0A5346] py-16 font-Begum text-center">
       {/* Headline */}
       <h2 className="text-3xl text-white md:text-4xl font-bold mb-4">
         Ready for Smooth, Hair-Free Skin?
@@ -13,7 +13,7 @@ const ClosingCTA = () => {
       </p>
 
       {/* CTA Button */}
-      <button className="bg-[#deacac] text-white px-8 py-3 text-lg font-bold rounded-md hover:bg-[#550640a7] transition-all duration-300">
+      <button className="hover:bg-[#0A5346] text-white px-8 py-3 text-lg font-bold rounded-md bg-[#69baabcd] transition-all duration-300">
         <Link href={"#"}> Claim up to 85% Off*</Link>
       </button>
     </div>

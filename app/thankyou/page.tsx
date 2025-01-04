@@ -14,7 +14,7 @@ const ThankYouPage = () => {
           text or email us back.
         </p>
 
-        <div className="bg-[#550640] text-white p-6 rounded-lg mb-6">
+        <div className="bg-[#0A5346] text-white p-6 rounded-lg mb-6">
           <h2 className="text-2xl font-semibold mb-2">Holiday Special Offer</h2>
           <p className="text-lg">
             Take advantage of our Holiday special offer—

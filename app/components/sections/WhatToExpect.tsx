@@ -59,8 +59,8 @@ const WhatToExpect: React.FC = () => {
                 <div className="text-center mt-12">
                     <Link
                         href="#home"
-                        className="inline-block px-8 py-3 bg-[#3f4e6e] text-lg font-semibold text-[#f6f4f2] hover:bg-white 
-                        hover:text-[#3f4e6e] rounded-lg hover:scale-95 duration-300 underline-offset-2 transition"
+                        className="inline-block px-8 py-3 bg-[#0A5346] text-lg font-semibold text-[#f6f4f2] hover:bg-white 
+                        hover:text-[#0A5346] rounded-lg hover:scale-95 duration-300 underline-offset-2 transition"
                     >Claim upto 85% off
                     </Link>
                 </div>

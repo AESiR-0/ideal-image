@@ -109,7 +109,7 @@ const WhyChooseUs = () => {
                 key={index}
                 className="bg-gray-50 border rounded-lg p-6 flex items-start hover:shadow-lg transition"
               >
-                <div className="bg-[#550640] text-white flex items-center justify-center h-12 w-12 rounded-full">
+                <div className="bg-[#0A5346] text-white flex items-center justify-center h-12 w-12 rounded-full">
                   {card.icon}
                 </div>
                 <div className="ml-4">

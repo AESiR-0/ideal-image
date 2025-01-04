@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-[#f6f4f2] text-[#550640] py-8 font-Begum">
+    <footer className="bg-[#f6f4f2] text-secondary py-8 font-Begum">
       <div className="container mx-auto px-6 lg:px-20 text-center md:text-left">
         {/* Offer Section */}
         <p className="text-sm mb-6 leading-relaxed md:mb-0">
