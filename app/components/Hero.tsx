@@ -210,7 +210,7 @@ const HomeForm = () => {
               />
             </div>
             <button
-              type="submit"
+              type="LASER & SAVE"
               disabled={isSubmitting}
               className="w-full bg-[#0A5346] text-white font-bold py-4 rounded-md hover:bg-[#0a5346e6] transition-all duration-300"
             >
