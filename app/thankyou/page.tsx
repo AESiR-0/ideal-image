@@ -18,7 +18,7 @@ const ThankYouPage = () => {
           <h2 className="text-2xl font-semibold mb-2">New Year, New You Offer</h2>
           <p className="text-lg">
             Take advantage of our New Year, New You offer—
-            <strong>upto 70% off</strong>—by scheduling your consultation
+            <strong>claim upto 70% off</strong>—by scheduling your consultation
             today!
           </p>
         </div>

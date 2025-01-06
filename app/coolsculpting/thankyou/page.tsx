@@ -17,7 +17,7 @@ const ThankYouPage = () => {
         <div className="bg-[#0A5346] text-white p-6 rounded-lg mb-6">
           <h2 className="text-2xl font-Begum font-semibold mb-2">Limited Time Offer</h2>
           <p className="text-lg">
-            Get an <strong>additional $500 off</strong> your CoolSculpting® Elite treatment
+            Get upto <strong>47% off</strong> on your CoolSculpting® Elite treatment
             by scheduling your consultation today!
           </p>
         </div>
