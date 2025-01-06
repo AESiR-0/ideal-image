@@ -14,7 +14,7 @@ const ClosingCTA = () => {
 
       {/* CTA Button */}
       <button className="hover:bg-[#0A5346] text-white px-8 py-3 text-lg font-bold rounded-md bg-[#69baabcd] transition-all duration-300">
-        <Link href={"#"}> Claim up to 85% Off*</Link>
+        <Link href={"#"}> Claim up to 70% Off*</Link>
       </button>
     </div>
   );

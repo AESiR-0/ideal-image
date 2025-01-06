@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 lg:px-20 text-center md:text-left">
         {/* Offer Section */}
         <p className="text-sm mb-6 leading-relaxed md:mb-0">
-          *Offer valid from November 1, 2024, to December 31, 2024. All customers
+          *Offer valid till 31st January, 2025. All customers
           are eligible to purchase select bundles of Laser Hair Removal 9
           Packages select prices for a limited time. Non-transferable, may not
           be applied to exchanges, returns, credit card payments, gift cards.
