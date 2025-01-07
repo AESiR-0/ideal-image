@@ -29,7 +29,7 @@ import cool_7b from "@/public/static/coolscultping/before after/7B.png";
 const BeforeAfterSlider = ({ page }: { page: string }) => {
   // Define images based on the page prop
   const images =
-    page === "coolsculpting"
+    page === "coolsculpting" || page === "coolsculpting-elite"
       ? [
         { before: cool_1a, after: cool_1b, text: "(4 months • 2 cycles)" },
         { before: cool_2a, after: cool_2b, text: "(3 months • 3 cycles)" },
