@@ -41,7 +41,7 @@ export default async function postData(values: FormData) {
   const spreadsheetId = "1jFcrxwNDIUm3A9TlIz2k01bY6WA9VouLZl9zUZiepcM";
   
   // Determine which sheet to use based on the URL
-  const sheetName = pageURL.includes("https://www.idealimage-aesthetics.com/coolsculpting") ? "Sheet2" : "Sheet1";
+  const sheetName = pageURL.includes("https://www.idealimage-aesthetics.com/coolsculpting") ? "Coolsculpting" : "Laser Hair Removal";
   
   try {
     const response = await sheets.spreadsheets.values.append({

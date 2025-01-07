@@ -15,7 +15,7 @@ import FAQs from '../components/FAQs';
 const CoolSculpting: React.FC = () => {
     return (
         <div className='font-Halenoir text-[#424e6d]'>
-            <div className="w-full  bg-transparent  absolute top-5 left-0 z-40 ">
+            <div className="w-full  bg-transparent  absolute top-5 left-5 z-40 ">
                 <div className="container  mx-auto flex items-center">
                     <Image
                         src="/static/logo/white.svg"
@@ -26,14 +26,14 @@ const CoolSculpting: React.FC = () => {
                 </div>
             </div>
             <HomeForm />
-            <Hero page={'coolscultping'} />
-            <TreatmentList page={'coolscultping'} />
-            <Benefits page={'coolscultping'} />
-            <WhyIdealImage page={'coolscultping'} />
-            <HowItWorks page={'coolscultping'} />
+            <Hero />
+            <TreatmentList />
+            <Benefits />
+            <WhyIdealImage />
+            <HowItWorks />
             <BeforeAfterSlider page={"coolsculpting"} />
-            <Comparison page={'coolscultping'} />
-            <WhatToExpect page={'coolscultping'} />
+            <Comparison />
+            <WhatToExpect />
             <FAQs page={"coolsculpting"} />
             <Footer />
         </div>

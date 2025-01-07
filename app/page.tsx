@@ -15,7 +15,7 @@ export default function Home() {
       <div className="w-full  bg-transparent  absolute top-5 left-0 z-40 ">
         <div className="container  mx-auto flex items-center">
           <Image
-            src="/static/logo/navbar.svg"
+            src="/static/logo/white.svg"
             alt="Company Logo"
             width={150}
             height={100}

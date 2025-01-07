@@ -1,7 +1,11 @@
 import Link from 'next/link';
 import React from 'react';
 
-const WhatToExpect: React.FC = () => {
+interface WhatToExpectProps {
+    page: string;
+}
+
+const WhatToExpect: React.FC<WhatToExpectProps> = ({ page }) => {
     return (
         <section className="bg-gray-50  px-6 md:px-16">
             <div className="max-w-7xl mx-auto">
@@ -9,7 +13,7 @@ const WhatToExpect: React.FC = () => {
                 <div className="text-center mb-12">
                     <h2 className="text-5xl font-Begum font-extrabold text-[#3f4e6e] mb-4 tracking-tight">What to Expect</h2>
                     <p className="text-xl text-[#3f4e6e] leading-relaxed max-w-2xl mx-auto">
-                        From consultation to results, here's everything you need to know about CoolSculpting® Elite.
+                        From consultation to results, here's everything you need to know about {page === 'coolsculpting-elite' ? 'CoolSculpting® Elite' : 'CoolSculpting®'}
                     </p>
                 </div>
 

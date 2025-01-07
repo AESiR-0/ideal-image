@@ -5,11 +5,14 @@ import b3 from '@/public/static/coolscultping/benefits/3.png'
 import b4 from '@/public/static/coolscultping/benefits/4.png'
 
 import Image from 'next/image'
-const Benefits: React.FC = () => {
+interface page {
+    page: string
+}
+const Benefits: React.FC<page> = ({ page }) => {
     return (
         <div className="bg-[#f6f4f2] py-10 md:py-20 flex justify-center px-4 text-center">
             <div className="max-w-7xl">
-                <h2 className="text-2xl text-[#515b7e] md:text-3xl font-Begum font-bold mb-8">The Benefits of CoolSculpting® Elite at Ideal Image</h2>
+                <h2 className="text-2xl text-[#515b7e] md:text-3xl font-Begum font-bold mb-8">The Benefits of {page === 'coolsculpting-elite' ? 'CoolSculpting® Elite' : 'CoolSculpting®'} at Ideal Image</h2>
                 <div className="flex flex-col md:flex-row justify-evenly items-center space-y-4 md:space-y-0 md:space-x-8">
                     <div className="flex w-full justify-center   items-center">
                         <span className="text-3xl mr-2"><Image src={b1} alt='benefit' height={48} width={48} /></span>
