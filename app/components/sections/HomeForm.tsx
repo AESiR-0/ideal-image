@@ -7,7 +7,7 @@ import hero from "@/public/static/coolscultping/hero_girl.webp"
 
 const uniqueId = uuidv4();
 
-const HomeForm = () => {
+const HomeForm = ({ page }: { page: string }) => {
     const router = useRouter();
     const [formData, setFormData] = useState({
         firstName: "",
@@ -103,7 +103,10 @@ const HomeForm = () => {
                     utmTerm: "",
                     pageURL: "",
                 });
-                router.push("/thankyou");
+                if (page === "coolsculpting")
+                    router.push("/coolsculpting/thankyou");
+                else
+                    router.push("/coolscultping-elite/thankyou");
             } else {
                 setError(result?.message || "Something went wrong!");
             }
@@ -131,7 +134,7 @@ const HomeForm = () => {
                 {/* Left Side: Tis the Season Text */}
                 <div className="text-left flex flex-col md:pt-5 bg-[#0A5346] text-[#f6f4f2] max-md:text-center md:px-10 w-full md:w-2/3">
                     <h1 className="text-2xl md:text-5xl font-extrabold">
-                        CoolSculpting® Elite
+                        {page === 'coolsculpting-elite' ? 'CoolSculpting® Elite' : 'CoolSculpting®'}
                     </h1>
                     <h2 className="my-2  text-lg md:text-2xl font-extrabold">
                         Feel confident in the clothes you love.
