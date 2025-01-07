@@ -130,7 +130,7 @@ const HomeForm = ({ page }: { page: string }) => {
             <div className="h-[30vh] max-md:h-screen max-md:bg-transparent bg-[#0A5346] flex max-md:flex-col items-center md:justify-between relative">
                 {/* Full-width Tis the Season Header */}
                 <h3 className="absolute max-md:w-screen max-md:static top-0 left-0 w-full uppercase text-lg md:text-4xl font-extrabold tracking-wide text-[#0A5346] bg-[#f6f4f2] max-md:text-center text-left md:pl-[3rem] py-2">
-                    'Tis the Holiday <span className="text-[#0A5346]">Season</span>
+                    Up to 40% off
                 </h3>
 
                 {/* Left Side: Tis the Season Text */}
