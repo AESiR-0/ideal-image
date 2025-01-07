@@ -103,10 +103,12 @@ const HomeForm = ({ page }: { page: string }) => {
                     utmTerm: "",
                     pageURL: "",
                 });
-                if (page === "coolsculpting")
+                if (page === "coolsculpting") {
                     router.push("/coolsculpting/thankyou");
-                else
-                    router.push("/coolscultping-elite/thankyou");
+                }
+                else {
+                    router.push("/coolsculpting-elite/thankyou");
+                }
             } else {
                 setError(result?.message || "Something went wrong!");
             }
