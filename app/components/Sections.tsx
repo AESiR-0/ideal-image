@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const blackFridayOffer = {
-  headline: "Holiday Special Offer!",
+  headline: "New Year, New You Offer!",
   subHeadline:
-    "Book now and get up to 85% OFF* on your laser hair removal package. Don’t wait—spots are filling fast!",
+    "Book now and get up to 70% OFF* on your laser hair removal package. Don’t wait—spots are filling fast!",
   buttonLabel: "Claim Offer",
 };
 

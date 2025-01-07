@@ -131,10 +131,10 @@ const HomeForm = () => {
         {/* Left Side: Tis the Season Text */}
         <div className="text-left flex flex-col md:pt-5 text-white bg-[#0A5346] max-md:text-center md:px-10 w-full md:w-2/3">
           <h1 className="text-2xl md:text-5xl font-extrabold">
-            Our Best Sale of the year
+            2025 Looks Good on You
           </h1>
           <h2 className="my-2 text-[#f6f4f2] text-xl md:text-3xl font-extrabold">
-            Up to 85% Off Laser <span>Hair Removal*</span>
+            Up to 70% Off Laser <span>Hair Removal*</span>
           </h2>
         </div>
 

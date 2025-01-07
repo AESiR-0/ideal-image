@@ -15,10 +15,10 @@ const ThankYouPage = () => {
         </p>
 
         <div className="bg-[#0A5346] text-white p-6 rounded-lg mb-6">
-          <h2 className="text-2xl font-semibold mb-2">Holiday Special Offer</h2>
+          <h2 className="text-2xl font-semibold mb-2">New Year, New You Offer</h2>
           <p className="text-lg">
-            Take advantage of our Holiday special offer—
-            <strong>additional $500 off</strong>—by scheduling your consultation
+            Take advantage of our New Year, New You offer—
+            <strong>claim upto 70% off</strong>—by scheduling your consultation
             today!
           </p>
         </div>
