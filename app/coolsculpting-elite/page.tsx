@@ -25,16 +25,16 @@ const CoolSculpting: React.FC = () => {
                     />
                 </div>
             </div>
-            <HomeForm page='coolscultping-elite' />
-            <Hero page='coolscultping-elite' />
-            <TreatmentList page='coolscultping-elite' />
-            <Benefits page='coolscultping-elite' />
-            <WhyIdealImage page='coolscultping-elite' />
-            <HowItWorks page='coolscultping-elite' />
-            <BeforeAfterSlider page='coolscultping-elite' />
-            <Comparison page='coolscultping-elite' />
-            <WhatToExpect page='coolscultping-elite' />
-            <FAQs page='coolscultping-elite' />
+            <HomeForm page='coolsculpting-elite' />
+            <Hero page='coolsculpting-elite' />
+            <TreatmentList page='coolsculpting-elite' />
+            <Benefits page='coolsculpting-elite' />
+            <WhyIdealImage page='coolsculpting-elite' />
+            <HowItWorks page='coolsculpting-elite' />
+            <BeforeAfterSlider page='coolsculpting-elite' />
+            <Comparison page='coolsculpting-elite' />
+            <WhatToExpect page='coolsculpting-elite' />
+            <FAQs page='coolsculpting-elite' />
             <Footer />
         </div>
     );
