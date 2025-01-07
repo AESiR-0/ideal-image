@@ -25,7 +25,7 @@ const CoolSculpting: React.FC = () => {
                     />
                 </div>
             </div>
-            <HomeForm />
+            <HomeForm page={'coolscultping'} />
             <Hero page={'coolscultping'} />
             <TreatmentList page={'coolscultping'} />
             <Benefits page={'coolscultping'} />
