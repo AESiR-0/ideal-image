@@ -10,7 +10,7 @@ const ThankYouPage = () => {
         </p>
 
         <p className="text-lg text-[#515b7e] font-medium mb-4">
-          Our CoolSculpting® specialists will be reaching out to you shortly.
+          Our CoolSculpting® Elite specialists will be reaching out to you shortly.
           If you miss our call, feel free to text or email us back.
         </p>
 
