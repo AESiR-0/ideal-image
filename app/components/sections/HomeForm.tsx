@@ -93,13 +93,30 @@ const HomeForm = ({ page }: { page: string }) => {
 
       if (response.ok) {
         // Redirect to the thank you page with desired parameters
-        router.push(
-          `/thankyou?email=${encodeURIComponent(
-            formData.email
-          )}&phone=${encodeURIComponent(
-            `${formData.countryCode}${formData.phone}`
-          )}`
-        );
+        if (page === "coolsculpting") {
+          router.push(
+            `/coolsculpting/thankyou?email=${encodeURIComponent(
+              formData.email
+            )}&phone=${encodeURIComponent(
+              `${formData.countryCode}${formData.phone}`
+            )}`
+          );
+        } else if (page === "coolsculpting-elite") {
+          router.push(
+            `/coolsculpting-elite/thankyou?email=${encodeURIComponent(
+              formData.email
+            )}&phone=${encodeURIComponent(
+              `${formData.countryCode}${formData.phone}`
+            )}`
+          );
+        } else
+          router.push(
+            `/thankyou?email=${encodeURIComponent(
+              formData.email
+            )}&phone=${encodeURIComponent(
+              `${formData.countryCode}${formData.phone}`
+            )}`
+          );
       } else {
         setError(result?.message || "Something went wrong!");
       }
