@@ -28,26 +28,25 @@ export async function POST(request: Request) {
     }
 
     // Redirect based on data.pageURL
-    const thankYouUrl = new URL(
-      data.pageURL.includes(
-        "https://www.idealimage-aesthetics.com/coolsculpting-elite"
-      )
-        ? "/coolsculpting-elite/thankyou"
-        : data.pageURL.includes(
-            "https://www.idealimage-aesthetics.com/coolsculpting"
-          )
-        ? "/coolsculpting/thankyou"
-        : "/thankyou", // Default fallback
-      request.url
-    );
-    thankYouUrl.searchParams.set("email", data.email);
-    thankYouUrl.searchParams.set("phone", `${data.countryCode}${data.phone}`);
+    // const thankYouUrl = new URL(
+    //   data.pageURL.includes(
+    //     "https://www.idealimage-aesthetics.com/coolsculpting-elite"
+    //   )
+    //     ? "/coolsculpting-elite/thankyou"
+    //     : data.pageURL.includes(
+    //         "https://www.idealimage-aesthetics.com/coolsculpting"
+    //       )
+    //     ? "/coolsculpting/thankyou"
+    //     : "/thankyou", // Default fallback
+    //   request.url
+    // );
+    // thankYouUrl.searchParams.set("email", data.email);
+    // thankYouUrl.searchParams.set("phone", `${data.countryCode}${data.phone}`);
 
     // Log and return status for integrations
     console.log("Google Sheets Success:", googleSheetSuccess);
     console.log("Salesforce Success:", salesforceSuccess);
-
-    return NextResponse.redirect(thankYouUrl.toString());
+    return NextResponse.json({ body: "Success!" }, { status: 200 });
   } catch (error) {
     console.error("Error in POST request:", error);
     return NextResponse.json(
