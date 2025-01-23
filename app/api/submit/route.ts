@@ -7,22 +7,27 @@ export async function POST(request: Request) {
     const data = await request.json();
     console.log("Received data:", data);
 
+    let googleSheetSuccess = false;
+    let salesforceSuccess = false;
+
     // Google Sheets Integration
     try {
       await postData(data);
-    } catch (googleSheetError) {
-      console.error("Google Sheets Error:", googleSheetError);
+      googleSheetSuccess = true;
+    } catch (error) {
+      console.error("Google Sheets Integration Failed:", error);
     }
 
     // Salesforce Integration
     try {
       const salesforceResponse = await pushToSalesforce(data);
       console.log("Salesforce Response:", salesforceResponse);
-    } catch (salesforceError) {
-      console.error("Salesforce Error:", salesforceError);
+      salesforceSuccess = true;
+    } catch (error) {
+      console.error("Salesforce Integration Failed:", error);
     }
 
-    // Pass user data to the thankyou page via query parameters
+    // Redirect based on data.pageURL
     const thankYouUrl = new URL(
       data.pageURL.includes(
         "https://www.idealimage-aesthetics.com/coolsculpting-elite"
@@ -32,17 +37,21 @@ export async function POST(request: Request) {
             "https://www.idealimage-aesthetics.com/coolsculpting"
           )
         ? "/coolsculpting/thankyou"
-        : "/thankyou",
+        : "/thankyou", // Default fallback
       request.url
     );
     thankYouUrl.searchParams.set("email", data.email);
     thankYouUrl.searchParams.set("phone", `${data.countryCode}${data.phone}`);
 
+    // Log and return status for integrations
+    console.log("Google Sheets Success:", googleSheetSuccess);
+    console.log("Salesforce Success:", salesforceSuccess);
+
     return NextResponse.redirect(thankYouUrl.toString());
   } catch (error) {
-    console.error("Error handling POST request:", error);
+    console.error("Error in POST request:", error);
     return NextResponse.json(
-      { error: "Error processing request" },
+      { error: "Internal Server Error" },
       { status: 500 }
     );
   }
