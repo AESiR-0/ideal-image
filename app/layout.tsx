@@ -52,6 +52,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PX2PFN3F');`}
         </Script>
         {/* End Google Tag Manager */}
+        {/* Meta Pixel Code */}
+        <Script strategy="afterInteractive">
+          {`!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '600211085953624');
+fbq('track', 'PageView');`}
+        </Script>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=600211085953624&ev=PageView&noscript=1"
+            alt="Meta Pixel"
+          />
+        </noscript>
         {/* ReB2B Script */}
         <Script id="reb2b-script" strategy="afterInteractive">
           {`!function () {
@@ -119,41 +141,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-L68SB695HB');
-            `,
-          }}
-        ></script>
-        {/* RB2B Script */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              !function () {
-                var reb2b = window.reb2b = window.reb2b || [];
-                if (reb2b.invoked) return;
-                reb2b.invoked = true;
-                reb2b.methods = ["identify", "collect"];
-                reb2b.factory = function (method) {
-                  return function () {
-                    var args = Array.prototype.slice.call(arguments);
-                    args.unshift(method);
-                    reb2b.push(args);
-                    return reb2b;
-                  };
-                };
-                for (var i = 0; i < reb2b.methods.length; i++) {
-                  var key = reb2b.methods[i];
-                  reb2b[key] = reb2b.factory(key);
-                }
-                reb2b.load = function (key) {
-                  var script = document.createElement("script");
-                  script.type = "text/javascript";
-                  script.async = true;
-                  script.src = "https://s3-us-west-2.amazonaws.com/b2bjsstore/b/" + key + "/reb2b.js.gz";
-                  var first = document.getElementsByTagName("script")[0];
-                  first.parentNode.insertBefore(script, first);
-                };
-                reb2b.SNIPPET_VERSION = "1.0.1";
-                reb2b.load("VN080H4YME6J");
-              }();
             `,
           }}
         ></script>

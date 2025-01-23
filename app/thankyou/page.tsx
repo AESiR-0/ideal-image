@@ -15,7 +15,9 @@ const ThankYouPage = () => {
         </p>
 
         <div className="bg-[#0A5346] text-white p-6 rounded-lg mb-6">
-          <h2 className="text-2xl font-semibold mb-2">New Year, New You Offer</h2>
+          <h2 className="text-2xl font-semibold mb-2">
+            New Year, New You Offer
+          </h2>
           <p className="text-lg">
             Take advantage of our New Year, New You offer—
             <strong>claim upto 70% off</strong>—by scheduling your consultation
@@ -54,7 +56,29 @@ const ThankYouPage = () => {
           You're so close to achieving your beauty goals and making a lasting
           change!
         </p>
-      </div>
+      </div>{" "}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+              event: "formSubmitted",
+              leadsUserData: {
+                email: "${
+                  typeof window !== "undefined"
+                    ? window.location.search.split("email=")[1]?.split("&")[0]
+                    : ""
+                }",
+                phone_number: "${
+                  typeof window !== "undefined"
+                    ? window.location.search.split("phone=")[1]?.split("&")[0]
+                    : ""
+                }",
+              },
+            });
+          `,
+        }}
+      />
     </div>
   );
 };
