@@ -14,6 +14,7 @@
     "clsx": "^2.1.1",
     "fa": "^1.0.1",
     "googleapis": "^144.0.0",
+    "headlessui": "^0.0.0",
     "keen-slider": "^6.8.6",
     "lucide-react": "^0.460.0",
     "next": "15.0.3",
