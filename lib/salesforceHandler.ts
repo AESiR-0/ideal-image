@@ -126,23 +126,26 @@ const pushToAPI = async (formData: Record<string, any>) => {
   try {
     let flag = false;
     const zipCode = formData.zipCode;
-    // console.log(zipCode);
     const nearestCenter = await getNearestCenter({ zipCode });
     console.log('nearestCenter', nearestCenter);
-    const serviceTypeCode = formData.pageURL.includes("https://www.idealimage-aesthetics.com/coolsculpting") ? "127" : "108";
-    if (nearestCenter === '')
-      flag = false;
-    else
-      flag = true;
+    
+    // Determine service type code based on URL
+    let serviceTypeCode = "108"; // default for Laser Hair Removal
+    if (formData.pageURL.includes("coolsculpting")) {
+      serviceTypeCode = "127";
+    } else if (formData.pageURL.includes("botox")) {
+      serviceTypeCode = "149";
+    }
 
-    // First get the prospect ID
-    // const prospectId = await getProspectId();
-    // const siteId = await getSiteId(formData.identifier);
+    if (nearestCenter === '') {
+      flag = false;
+    } else {
+      flag = true;
+    }
+
     let payload = {}
     if (flag) {
-      payload =
-      {
-        // prospect_id: prospectId,
+      payload = {
         metas: [
           { key: "firstName", value: formData.firstName, type: "explicit" },
           { key: "lastName", value: formData.lastName, type: "explicit" },
@@ -163,7 +166,7 @@ const pushToAPI = async (formData: Record<string, any>) => {
           { key: "wantsContact", value: true, type: "explicit" },
         ],
       };
-    } else
+    } else {
       payload = {
         metas: [
           { key: "firstName", value: formData.firstName, type: "explicit" },
@@ -175,12 +178,12 @@ const pushToAPI = async (formData: Record<string, any>) => {
             value: `${formData.countryCode}${formData.phone}`,
             type: "explicit",
           },
-          { key: "serviceTypeCode", value: "127", type: "implicit" },
+          { key: "serviceTypeCode", value: serviceTypeCode, type: "implicit" },
           { key: "zipcode", value: formData.zipCode, type: "explicit" },
           { key: "wantsContact", value: true, type: "explicit" },
         ],
       }
-    // console.log(prospectId);
+    }
 
     const response = await fetch((BASE + "v1/prospect"), {
       method: "POST",

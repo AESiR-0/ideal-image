@@ -41,7 +41,12 @@ export default async function postData(values: FormData) {
   const spreadsheetId = "1jFcrxwNDIUm3A9TlIz2k01bY6WA9VouLZl9zUZiepcM";
   
   // Determine which sheet to use based on the URL
-  const sheetName = pageURL.includes("https://www.idealimage-aesthetics.com/coolsculpting") ? "Coolsculpting" : "Laser Hair Removal";
+  let sheetName = "Laser Hair Removal"; // default sheet
+  if (pageURL.includes("coolsculpting")) {
+    sheetName = "Coolsculpting";
+  } else if (pageURL.includes("botox")) {
+    sheetName = "Botox";
+  }
   
   try {
     const response = await sheets.spreadsheets.values.append({
