@@ -18,41 +18,33 @@ const BotoxUnits = () => {
     ];
 
     return (
-        <div className="relative max-md:py-10 ">
-            <div className="bg-[radial-gradient(circle,_rgb(235,224,210)_0%,_rgb(220,205,190)_100%)] overflow-hidden md:min-h-screen grid md:grid-cols-2 grid-cols-1 pt-10 relative">
-                <div className="w-10/12 max-md:hidden">
-                    <Image
-                        src="/static/botox/units/units_model.png"
-                        alt="Botox Treatment Areas"
-                        width={720}
-                        height={620}
-                        className="absolute -bottom-12 left-5 pt-5 rounded-lg"
-                    />
-                </div>
-                <div className="w-full px-4 flex flex-col items-center gap-8">
+        <div className="relative py-10">
+            <div className="md:bg-[radial-gradient(circle,_rgb(235,224,210)_0%,_rgb(220,205,190)_100%)] overflow-hidden md:min-h-screen flex flex-col md:grid md:grid-cols-2 pt-10 relative">
+                {/* Table Section - Shows first on mobile */}
+                <div className="w-full order-1 md:order-2 px-4 flex flex-col items-center gap-8">
                     <div className="w-full max-w-lg">
                         <div className="w-full justify-center flex">
-                            <h2 className="text-4xl max-md:text-3xl text-center font-bold text-secondary font-Begum mb-8">
+                            <h2 className="text-4xl text-center font-bold text-secondary font-Begum mb-8">
                                 How Many Units Will I Need?
                             </h2>
                         </div>
 
-                        <div className="bg-secondary px-6 md:px-20 rounded-t-lg p-3 flex justify-between">
+                        <div className="bg-secondary px-6 md:px-6 rounded-t-lg p-3 flex gap-40 max-md:gap-28 justify-end">
                             <div className="font-semibold text-white">Units</div>
                             <div className="font-semibold text-white">Price*</div>
                         </div>
-                        <div className="bg-white rounded-b-lg p-4 md:p-6 shadow-lg">
+                        <div className="bg-white rounded-b-lg p-4 md:p-6 shadow-xl">
                             <div className="grid grid-cols-[auto,1fr,auto] gap-2 md:gap-4 mb-6">
                                 {treatmentAreas.map(area => (
                                     <React.Fragment key={area.id}>
-                                        <div className="w-7 h-7 md:w-8 md:h-8 bg-secondary text-white rounded-full flex items-center justify-center">
+                                        <div className="w-7 h-7 max-md:mt-2 md:w-8 md:h-8 bg-secondary text-white rounded-full flex items-center justify-center">
                                             {area.id}
                                         </div>
-                                        <div>
-                                            <div className="font-semibold text-sm md:text-base">{area.area}</div>
-                                            <div className="text-xs md:text-sm text-gray-600">{area.units}</div>
+                                        <div className="flex flex-col justify-center items-center">
+                                            <div className="font-semibold text-md">{area.area}</div>
+                                            <div className="md:text-md text-gray-600">{area.units}</div>
                                         </div>
-                                        <div className="text-right text-sm md:text-base">{area.price}</div>
+                                        <div className="md:text-right text-center text-md">{area.price}</div>
                                     </React.Fragment>
                                 ))}
                             </div>
@@ -70,12 +62,23 @@ const BotoxUnits = () => {
                                 ))}
                             </div>
                         </div>
-                        <div className="mt-4 max-md:py-5 text-xs md:text-sm text-gray-600 space-y-1">
+                        <div className="mt-4 py-5 text-center md:text-left md:text-sm text-gray-600 space-y-1">
                             <p>*Only with qualifying memberships. Terms apply.</p>
                             <p>*Available only with the purchase of standard treatment areas: forehead, frown lines, crow's feet, and neck.</p>
                             <p>†Number of units may vary depending on individual. Results may vary.</p>
                         </div>
                     </div>
+                </div>
+
+                {/* Image Section - Shows second on mobile */}
+                <div className="w-full md:w-10/12 order-2 md:order-1 mt-8 md:mt-0">
+                    <Image
+                        src="/static/botox/units/units_model.png"
+                        alt="Botox Treatment Areas"
+                        width={720}
+                        height={620}
+                        className="mx-auto md:mx-0 md:bottom-0 md:absolute md:left-5 pt-5 rounded-lg"
+                    />
                 </div>
             </div>
         </div>
