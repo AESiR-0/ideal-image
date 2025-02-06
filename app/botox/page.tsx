@@ -22,7 +22,7 @@ const BotoxPage: React.FC = () => {
       {/* Page Content */}
       <div className="font-Halenoir text-[#424e6d]">
         <div className="w-full bg-transparent absolute top-5 left-0 z-40">
-          <div className="container mx-auto flex items-center">
+          <div className="container mx-auto px-10 flex items-center">
             <Image
               src="/static/logo/white.svg"
               alt="Company Logo"
