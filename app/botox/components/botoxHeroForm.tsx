@@ -124,28 +124,28 @@ const HomeForm = () => {
       </div>
 
       {/* Row 2: Tis the Season Content */}
-      <div className="h-[30vh] max-md:h-screen max-md:bg-transparent bg-[#0A5346] flex max-md:flex-col items-center md:justify-between relative">
+      <div className="h-[25vh] max-md:h-screen max-md:bg-transparent bg-[#0A5346] flex max-md:flex-col items-center md:justify-between relative">
         {/* Full-width Tis the Season Header */}
         <h3 className="absolute max-md:w-screen max-md:static top-0 left-0 w-full uppercase text-lg md:text-4xl font-extrabold tracking-wide text-[#0A5346] bg-[#f6f4f2] max-md:text-center text-left md:pl-[3rem] py-2">
           Now Only $9/Unit For All
         </h3>
 
         {/* Left Side: Tis the Season Text */}
-        <div className="text-left flex flex-col md:pt-5 bg-[#0A5346] text-[#f6f4f2] max-md:text-center md:px-10 w-full md:w-2/3">
-          <h1 className="text-2xl md:text-5xl font-extrabold">Botox®</h1>
-          <h2 className="my-2  text-lg md:text-2xl font-extrabold">
+        <div className="text-left flex flex-col md:pt-10 bg-[#0A5346] text-[#f6f4f2] max-md:text-center md:px-10 w-full md:w-2/3">
+          <h1 className="max-md:text-2xl max-lg:text-4xl max-md:mt-2  max-lg:mt-6 text-5xl font-extrabold">Botox®</h1>
+          <h2 className="mb-2 max-md:text-lg  max-lg:text-xl text-2xl  font-extrabold">
             No membership required to unlock — so smooth on over.
           </h2>
         </div>
 
         {/* Right Side: Form */}
-        <div className="absolute max-md:static max-md:text-center md:right-[5%] md:transform md:-translate-y-1/2 bg-slate-100 md:py-10 p-12 rounded-lg text-slate-800 shadow-lg max-md:w-full md:w-[500px] lg:w-[600px] z-10">
+        <div id="form" className="absolute max-md:static max-md:text-center md:right-[5%] md:transform md:-translate-y-[45%] bg-slate-100 md:py-10 p-12 rounded-lg text-slate-800 shadow-lg max-md:w-full md:w-[500px] lg:w-[600px] z-10">
           <h2 className="text-center text-3xl md:text-2xl font-bold mb-6">
             Smooth Lines & Prevent Wrinkles
           </h2>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-6 w-full">
+          <form  onSubmit={handleSubmit} className="space-y-6 w-full">
             <div className="flex flex-col md:flex-row gap-4">
               <input
                 type="text"

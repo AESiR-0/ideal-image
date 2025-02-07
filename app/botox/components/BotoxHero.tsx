@@ -25,9 +25,9 @@ const BotoxHero: React.FC = () => {
     ];
 
     return (
-        <div className="text-secondary font-Begum py-24 px-4">
-            <div className="container mx-auto max-w-6xl">
-                <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+        <div className="text-secondary font-Begum pb-12 py-24 px-4">
+            <div className="container max-md:mt-10 mx-auto max-w-6xl">
+                <h1 className="text-3xl  md:text-4xl font-bold mb-4 text-center">
                     Frown Lines? Kick 'Em To The Curb.
                 </h1>
                 <p className="text-xl md:text-2xl mb-12 text-center">

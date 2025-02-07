@@ -38,7 +38,7 @@ const BeforeAfterSlider = () => {
             >
                 {images.map((image, index) => (
                     <SwiperSlide key={index}>
-                        <div className="flex flex-col px-4 md:px-10 md:flex-row justify-center py-4 items-center gap-4 md:gap-8">
+                        <div className="flex flex-col px-4 md:px-10 md:flex-row justify-center py-10 items-center gap-4 md:gap-8">
                             {/* Before Image */}
                             <div className="relative w-full md:w-auto">
                                 <Image
@@ -65,11 +65,11 @@ const BeforeAfterSlider = () => {
                                     AFTER
                                 </div>
 
-                                <div className="text-[#424e6d] absolute flex flex-col -bottom-2  left-1/2 transform w-full -translate-x-1/2 text-center pt-3 md:pt-5">
+                                <div className="text-[#424e6d] absolute flex flex-col -bottom-5  left-1/2 transform w-full -translate-x-1/2 text-center pt-3 md:pt-5">
                                     <span className="text-base max-md:mt-2
                                      md:text-base">{image.text}</span>
                                     {index === 1 && (
-                                        <span className="text-xs md:text-base text-[#424e6d] absolute -bottom-7 md:-bottom-5 left-1/2 w-full -translate-x-1/2 text-center">
+                                        <span className="text-xs md:text-base text-[#424e6d] absolute -bottom-7 max-md:-bottom-5 left-1/2 w-full -translate-x-1/2 text-center">
                                             *Client also received treatment on Forehead and Frown Lines.
                                         </span>
                                     )}
@@ -81,7 +81,7 @@ const BeforeAfterSlider = () => {
             </Swiper>
 
             {/* Footer Text */}
-            <p className="text-center text-gray-500 text-xs md:text-sm mt-4">Results may vary.</p>
+            <p className="text-center text-gray-500 text-xs md:text-sm md:mt-4">Results may vary.</p>
         </div>
     );
 };
