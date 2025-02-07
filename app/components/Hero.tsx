@@ -111,14 +111,14 @@ const HomeForm = () => {
   return (
     <div className="relative h-full font-sans">
       {/* Row 1: Hero Image */}
-      <div className="h-[60vh] max-md:h-[40vh] flex justify-center max-md:bg-left max-md:bg-cover static bg-cover bg-center bg-no-repeat bg-[url('/static/coolscultping/hero.avif')]">
-        <Image
+      <div className="h-[60vh] max-md:h-[40vh] flex justify-center max-md:bg-right max-md:bg-[#947458] bg-[#876747] max-md:bg-contain  static bg-contain bg-left  bg-no-repeat max-md:bg-[url('/static/hero/cactus_2.png')] bg-[url('/static/hero/cactus.avif')]">
+        {/* <Image
           className="max-md:m-0 max-md:py-0 py-10 -ml-[47vw]"
           src={hero}
           height={400}
           width={450}
           alt=""
-        />
+        /> */}
       </div>
 
       {/* Row 2: Tis the Season Content */}
