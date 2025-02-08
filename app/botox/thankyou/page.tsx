@@ -1,8 +1,8 @@
 import { Metadata } from "next"; // If using Next.js 13+ for metadata (optional)
 
 export const metadata: Metadata = {
-  title: "Thank You | CoolSculpting",
-  description: "Your next steps for CoolSculpting transformation.",
+  title: "Thank You | Botox",
+  description: "Your next steps for Botox transformation.",
 };
 
 const ThankYouPage = () => {
@@ -74,16 +74,14 @@ const ThankYouPage = () => {
             window.dataLayer.push({
               event: "formSubmitted",
               leadsUserData: {
-                email: "${
-                  typeof window !== "undefined"
-                    ? window.location.search.split("email=")[1]?.split("&")[0]
-                    : ""
-                }",
-                phone_number: "${
-                  typeof window !== "undefined"
-                    ? window.location.search.split("phone=")[1]?.split("&")[0]
-                    : ""
-                }",
+                email: "${typeof window !== "undefined"
+              ? window.location.search.split("email=")[1]?.split("&")[0]
+              : ""
+            }",
+                phone_number: "${typeof window !== "undefined"
+              ? window.location.search.split("phone=")[1]?.split("&")[0]
+              : ""
+            }",
               },
             });
           `,

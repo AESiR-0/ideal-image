@@ -7,6 +7,7 @@ import BotoxHero from "./components/BotoxHero";
 import BeforeAfterSliderBotox from "./components/BeforeAfterSliderBotox";
 import BotoxFAQs from "./components/BotoxFAQs";
 import BotoxUnits from "./components/BotoxUnits";
+import Offer from "@/app/components/Offer";
 
 const BotoxPage: React.FC = () => {
   return (
@@ -54,6 +55,7 @@ const BotoxPage: React.FC = () => {
             </Link>
           </div>
         </div>
+        <Offer page="botox" />
         <Footer />
       </div>
     </>
