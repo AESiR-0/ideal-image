@@ -111,7 +111,7 @@ const HomeForm = ({ page }: { page: string }) => {
           );
         } else
           router.push(
-            `/thankyou?email=${encodeURIComponent(
+            `/thank-you?email=${encodeURIComponent(
               formData.email
             )}&phone=${encodeURIComponent(
               `${formData.countryCode}${formData.phone}`
