@@ -92,7 +92,7 @@ const HomeForm = () => {
       if (response.ok) {
         // Redirect to the thank you page with desired parameters
         router.push(
-          `/thankyou?email=${encodeURIComponent(
+          `/thank-you?email=${encodeURIComponent(
             formData.email
           )}&phone=${encodeURIComponent(
             `${formData.countryCode}${formData.phone}`
