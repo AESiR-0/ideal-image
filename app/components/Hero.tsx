@@ -3,7 +3,6 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Image from "next/image";
-import hero from "@/public/static/hero/laser-hair-removal-tile-1200x800-1.jpg";
 
 const uniqueId = uuidv4();
 
@@ -111,7 +110,7 @@ const HomeForm = () => {
   return (
     <div className="relative h-full font-sans">
       {/* Row 1: Hero Image */}
-      <div className="h-[60vh] max-md:h-[30vh] flex justify-center max-md:bg-center max-md:bg-[#947458] bg-[#876747] max-md:bg-cover static bg-cover bg-center bg-no-repeat bg-[url('/static/hero/laser-hair-removal-tile-1200x800-1.jpg')]">
+      <div className="h-[60vh] max-md:h-[30vh] flex justify-center max-md:bg-center max-md:bg-[#947458] bg-[#876747] max-md:bg-cover static bg-contain bg-left bg-no-repeat bg-[url('/static/hero/laser-hair-removal-tile-1200x800-1.jpg')]">
         {/* <Image
           className="max-md:m-0 max-md:py-0 py-10 -ml-[47vw]"
           src={hero}
