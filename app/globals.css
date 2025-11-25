@@ -32,3 +32,11 @@ body {
     margin-top: 11rem;
   }
 }
+/* Hero background override */
+.hero-bg {
+  background-image: url('/static/hero/laser-hair-removal-tile-1200x800-1.jpg');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
